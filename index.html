@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1A1A2E">
+<title>WuruwuruGo – Fake Alert & Odds Detector</title>
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="WuruwuruGo – Nigeria's #1 Fake Bank Alert Detector & Betting Odds Manipulation Checker. Stop getting scammed today.">
+<!-- Open Graph for social sharing -->
+<meta property="og:title" content="WuruwuruGo – Stop Fake Alerts & Odds Manipulation 🚨">
+<meta property="og:description" content="I just exposed a fake bank alert using WuruwuruGo! This app saved me from losing money. Every Nigerian POS agent, trader and bettor needs this. Try it FREE 👇">
+<meta property="og:image" content="https://i.ibb.co/wg-share.png">
+<meta property="og:url" content="https://wuruwurugo.tiiny.site">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🚨 WuruwuruGo – Catch Fake Alerts & Odds Scams Instantly">
+<meta name="twitter:description" content="Nigerians are losing millions to fake bank alerts & edited betting odds. WuruwuruGo detects EVERYTHING in seconds. Try FREE now 👇">
+<style>
+:root{
+  --primary:#FF6B00;--primary-d:#CC5500;--primary-l:#FFF0E6;
+  --secondary:#1A1A2E;--secondary-l:#2D2D44;
+  --accent:#00D4AA;--accent-l:#E0FAF5;
+  --danger:#FF3B30;--danger-l:#FFEBEA;
+  --success:#00C851;--success-l:#E0F9E6;
+  --warning:#FFB300;--warning-l:#FFF8E1;
+  --ink:#0A0A0A;--gray-900:#1C1C1E;--gray-700:#3C3C3E;--gray-600:#636366;
+  --gray-300:#C7C7CC;--gray-100:#F2F2F7;--white:#FFF;
+  --r:12px;--r-lg:16px;--r-xl:24px;
+  --s:8px;--s2:16px;--s3:24px;--s4:32px;
+  --shadow:0 4px 16px rgba(0,0,0,0.12);
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;font-family:var(--font);background:var(--white);color:var(--ink);font-size:16px;line-height:1.5}
+button{font:inherit;border:0;background:none;cursor:pointer}
+input,textarea,select{font:inherit;border:0;outline:0}
+.hidden{display:none!important}
+.flex{display:flex}.f-col{flex-direction:column}.f-center{align-items:center;justify-content:center}.f-between{justify-content:space-between}.f-align{align-items:center}
+.w-full{width:100%}.h-full{height:100%}
+.p-2{padding:var(--s2)}.p-3{padding:var(--s3)}.px-2{padding:0 var(--s2)}.py-2{padding:var(--s2) 0}
+.mt-1{margin-top:var(--s)}.mt-2{margin-top:var(--s2)}.mt-3{margin-top:var(--s3)}.mb-1{margin-bottom:var(--s)}.mb-2{margin-bottom:var(--s2)}.mb-3{margin-bottom:var(--s3)}
+.r{border-radius:var(--r)}.r-lg{border-radius:var(--r-lg)}.r-xl{border-radius:var(--r-xl)}.r-full{border-radius:50%}
+.shadow{box-shadow:var(--shadow)}
+.t-center{text-align:center}.t-right{text-align:right}
+.t-xs{font-size:11px}.t-sm{font-size:13px}.t-base{font-size:15px}.t-lg{font-size:18px}.t-xl{font-size:22px}.t-2xl{font-size:26px}.t-3xl{font-size:32px}
+.w-500{font-weight:500}.w-600{font-weight:600}.w-700{font-weight:700}.w-800{font-weight:800}
+.c-white{color:var(--white)}.c-primary{color:var(--primary)}.c-accent{color:var(--accent)}.c-danger{color:var(--danger)}.c-success{color:var(--success)}.c-warning{color:var(--warning)}.c-gray{color:var(--gray-600)}
+.bg-primary{background:var(--primary)}.bg-secondary{background:var(--secondary)}.bg-accent{background:var(--accent)}.bg-gray{background:var(--gray-100)}
+.btn{height:52px;border-radius:var(--r);font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform 0.1s,opacity 0.1s;padding:0 20px;font-size:15px}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--primary);color:var(--white)}.btn-primary:hover{background:var(--primary-d)}
+.btn-primary:disabled{background:var(--gray-300);color:var(--gray-600);pointer-events:none}
+.btn-secondary{background:var(--secondary);color:var(--white)}
+.btn-accent{background:var(--accent);color:var(--secondary);font-weight:700}
+.btn-outline{border:2px solid var(--gray-300);color:var(--ink)}
+.btn-ghost{color:var(--gray-600)}
+.btn-danger{background:var(--danger);color:var(--white)}
+.input{background:var(--gray-100);border-radius:var(--r);padding:14px var(--s2);width:100%;font-size:15px;transition:box-shadow 0.2s,background 0.2s}
+.input:focus{background:var(--white);box-shadow:0 0 0 2.5px var(--primary)}
+.textarea{background:var(--gray-100);border-radius:var(--r-lg);padding:14px var(--s2);width:100%;font-size:15px;resize:none;transition:box-shadow 0.2s,background 0.2s;line-height:1.6}
+.textarea:focus{background:var(--white);box-shadow:0 0 0 2.5px var(--primary)}
+.card{background:var(--white);border-radius:var(--r-lg);padding:var(--s2);box-shadow:var(--shadow)}
+.card-flat{background:var(--gray-100);border-radius:var(--r-lg);padding:var(--s2)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+.badge-primary{background:var(--primary-l);color:var(--primary-d)}
+.badge-accent{background:var(--accent-l);color:var(--accent)}
+.badge-danger{background:var(--danger-l);color:var(--danger)}
+.badge-success{background:var(--success-l);color:var(--success)}
+.badge-warning{background:var(--warning-l);color:var(--warning)}
+.badge-gray{background:var(--gray-100);color:var(--gray-600)}
+.divider{height:1px;background:var(--gray-100);margin:var(--s2) 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;display:flex;align-items:flex-end;animation:fadeInBg 0.2s}
+@keyframes fadeInBg{from{background:transparent}}
+.sheet{background:var(--white);width:100%;border-radius:var(--r-xl) var(--r-xl) 0 0;max-height:92%;overflow-y:auto;animation:slideUp 0.3s cubic-bezier(.32,2,.55,.89)}
+@keyframes slideUp{from{transform:translateY(100%)}}
+.sheet-handle{width:36px;height:4px;background:var(--gray-300);border-radius:4px;margin:12px auto 0}
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--gray-900);color:var(--white);padding:12px 20px;border-radius:var(--r);z-index:9999;font-size:14px;font-weight:500;animation:toastIn 0.3s;white-space:nowrap;max-width:90vw;text-align:center}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(10px)}}
+.tab{flex:1;height:44px;border-bottom:3px solid transparent;font-weight:600;color:var(--gray-600);font-size:14px;transition:color 0.2s,border-color 0.2s}
+.tab.active{color:var(--primary);border-color:var(--primary)}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 0;color:var(--gray-600);font-size:11px;font-weight:500;border-top:2px solid transparent;transition:color 0.2s}
+.nav-item.active{color:var(--primary);border-color:var(--primary)}
+.nav-item svg{width:22px;height:22px}
+#app{max-width:480px;margin:0 auto;height:100%;display:flex;flex-direction:column;position:relative}
+.screen{flex:1;overflow-y:auto;display:none;flex-direction:column}
+.screen.active{display:flex}
+.nav-bar{height:64px;display:flex;align-items:stretch;background:var(--white);border-top:1px solid var(--gray-100);flex-shrink:0;box-shadow:0 -2px 8px rgba(0,0,0,0.06)}
+.header{height:60px;padding:0 var(--s2);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-bottom:1px solid var(--gray-100)}
+.logo-circle{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-d));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* AUTH SCREENS */
+#authWrap{position:fixed;inset:0;z-index:600;background:linear-gradient(160deg,var(--secondary) 0%,#2D0A4E 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.auth-card{background:var(--white);border-radius:24px;padding:28px 20px;width:100%;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+
+/* SPLASH */
+#splash{background:linear-gradient(160deg,var(--secondary) 0%,#2D0A4E 100%);position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.6s}
+.splash-logo{width:100px;height:100px;border-radius:28px;background:linear-gradient(135deg,var(--primary),#FF9A3C);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(255,107,0,0.5);animation:popIn 0.6s cubic-bezier(.32,2,.55,.89)}
+@keyframes popIn{from{transform:scale(0.4) rotate(-15deg);opacity:0}}
+.splash-ring{position:absolute;border:3px solid rgba(255,107,0,0.2);border-radius:50%;animation:ringPulse 2s infinite}
+.splash-ring:nth-child(1){width:140px;height:140px;animation-delay:0s}
+.splash-ring:nth-child(2){width:190px;height:190px;animation-delay:0.4s}
+.splash-ring:nth-child(3){width:240px;height:240px;animation-delay:0.8s}
+@keyframes ringPulse{0%{transform:scale(0.8);opacity:0.8}100%{transform:scale(1.2);opacity:0}}
+.splash-loader{width:120px;height:4px;background:rgba(255,255,255,0.15);border-radius:4px;overflow:hidden;margin-top:40px}
+.splash-progress{height:100%;background:var(--primary);border-radius:4px;animation:loadBar 2.8s ease-in-out forwards}
+@keyframes loadBar{0%{width:0%}100%{width:100%}}
+
+.result-card{border-radius:var(--r-xl);padding:var(--s3);position:relative;overflow:hidden}
+.result-card::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.08)}
+.score-circle{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-direction:column;border:3px solid rgba(255,255,255,0.4)}
+.indicator-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--gray-100)}
+.indicator-row:last-child{border-bottom:none}
+.indicator-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.odds-row{display:flex;align-items:center;padding:10px 12px;background:var(--white);border-radius:8px;margin-bottom:4px}
+.odds-changed{background:var(--danger-l)!important}
+.odds-same{background:var(--success-l)!important}
+.spinner{width:20px;height:20px;border:2.5px solid #eee;border-top-color:var(--primary);border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fade-in{animation:fadeIn 0.4s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}}
+.bounce-in{animation:bounceIn 0.5s cubic-bezier(.32,2,.55,.89)}
+@keyframes bounceIn{from{transform:scale(0.85);opacity:0}}
+
+/* SHARE BUTTONS */
+.share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.share-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border-radius:12px;font-size:11px;font-weight:600;cursor:pointer;border:none;transition:transform 0.1s}
+.share-btn:active{transform:scale(.94)}
+
+/* RECEIPT UPLOAD */
+.upload-zone{border:2.5px dashed var(--gray-300);border-radius:var(--r-lg);padding:32px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--primary);background:var(--primary-l)}
+
+/* TERMS / PRIVACY pages */
+.legal-content h3{font-size:15px;font-weight:700;margin:16px 0 6px}
+.legal-content p,.legal-content li{font-size:13px;color:var(--gray-700);line-height:1.7;margin-bottom:6px}
+.legal-content ul{padding-left:18px}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div style="position:relative;display:flex;align-items:center;justify-content:center">
+    <div class="splash-ring"></div><div class="splash-ring"></div><div class="splash-ring"></div>
+    <div class="splash-logo">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <path d="M8 14 L16 42 L22 28 L28 42 L34 28 L40 42 L48 14" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="28" cy="8" r="4" fill="#FF9A3C"/>
+      </svg>
+    </div>
+  </div>
+  <div class="t-2xl w-800 c-white mt-3" style="letter-spacing:-0.5px">WuruwuruGo</div>
+  <div class="t-sm c-white mt-1" style="opacity:0.7">No Dulling. No Cheating. No Wuruwuru.</div>
+  <div class="splash-loader"><div class="splash-progress"></div></div>
+</div>
+
+<!-- AUTH WRAP -->
+<div id="authWrap">
+  <!-- SIGNUP -->
+  <div id="signupView" class="auth-card">
+    <div class="t-center mb-3">
+      <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,var(--primary),#FF9A3C);display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+        <svg width="36" height="36" viewBox="0 0 56 56" fill="none"><path d="M8 14 L16 38 L22 26 L28 38 L34 26 L40 38 L48 14" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <div class="t-xl w-800">WuruwuruGo</div>
+      <div class="t-xs c-gray mt-1">Create your free account to get started</div>
+    </div>
+    <div class="mb-2">
+      <label class="t-xs w-600 c-gray" style="display:block;margin-bottom:5px">Full Name</label>
+      <input type="text" class="input" id="signupName" placeholder="e.g. Chukwuemeka Obi" autocomplete="name">
+    </div>
+    <div class="mb-2">
+      <label class="t-xs w-600 c-gray" style="display:block;margin-bottom:5px">Phone Number</label>
+      <input type="tel" class="input" id="signupPhone" placeholder="e.g. 08012345678" autocomplete="tel">
+    </div>
+    <div class="mb-3">
+      <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer">
+        <input type="checkbox" id="signupAgree" style="margin-top:3px;accent-color:var(--primary)">
+        <span class="t-xs c-gray">I agree to WuruwuruGo's <button class="t-xs c-primary w-600" style="text-decoration:underline" onclick="showScreen('terms')">Terms of Service</button> and <button class="t-xs c-primary w-600" style="text-decoration:underline" onclick="showScreen('privacy')">Privacy Policy</button></span>
+      </label>
+    </div>
+    <button class="btn btn-primary w-full" onclick="doSignup()">Create Free Account →</button>
+    <div class="t-center mt-2">
+      <button class="t-sm c-primary w-600" onclick="showAuthView('loginView')">Already have an account? Login</button>
+    </div>
+    <div id="signupError" class="t-xs c-danger mt-2 hidden t-center"></div>
+  </div>
+  <!-- LOGIN -->
+  <div id="loginView" class="auth-card hidden">
+    <div class="t-center mb-3">
+      <div style="font-size:40px;margin-bottom:8px">🔐</div>
+      <div class="t-xl w-800">Welcome Back</div>
+      <div class="t-xs c-gray mt-1">Enter your details to continue</div>
+    </div>
+    <div class="mb-2">
+      <label class="t-xs w-600 c-gray" style="display:block;margin-bottom:5px">Full Name</label>
+      <input type="text" class="input" id="loginName" placeholder="Enter your full name" autocomplete="name">
+    </div>
+    <div class="mb-3">
+      <label class="t-xs w-600 c-gray" style="display:block;margin-bottom:5px">Phone Number</label>
+      <input type="tel" class="input" id="loginPhone" placeholder="Enter your phone number" autocomplete="tel">
+    </div>
+    <button class="btn btn-primary w-full" onclick="doLogin()">Login →</button>
+    <div class="t-center mt-2">
+      <button class="t-sm c-primary w-600" onclick="showAuthView('signupView')">New user? Create account</button>
+    </div>
+    <div id="loginError" class="t-xs c-danger mt-2 hidden t-center"></div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" style="display:none">
+  <!-- HOME -->
+  <div id="home" class="screen active">
+    <div class="header bg-secondary">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="logo-circle">
+          <svg width="22" height="22" viewBox="0 0 56 56" fill="none"><path d="M8 14 L16 38 L22 26 L28 38 L34 26 L40 38 L48 14" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div>
+          <div class="t-base w-700 c-white">WuruwuruGo</div>
+          <div class="t-xs c-white" style="opacity:0.6" id="greetUser">Hello!</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="badge badge-primary" id="planBadge" onclick="showUpgrade()">FREE</button>
+        <button onclick="doLogout()" class="t-xs c-white" style="opacity:0.6;padding:4px">Exit</button>
+      </div>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)">
+      <!-- HERO -->
+      <div class="card mb-2" style="background:linear-gradient(135deg,var(--secondary),#2D0A4E);padding:var(--s3);position:relative;overflow:hidden">
+        <div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,107,0,0.15)"></div>
+        <div style="position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(0,212,170,0.1)"></div>
+        <div class="t-xl w-700 c-white mb-1">Protect Yourself Now</div>
+        <div class="t-sm c-white mb-3" style="opacity:0.75">Detect fake bank alerts & betting odds manipulation instantly.</div>
+        <div class="flex" style="gap:10px">
+          <button class="btn btn-primary" style="height:44px;font-size:14px" onclick="switchNav('alert',null)">🏦 Check Alert</button>
+          <button class="btn btn-accent" style="height:44px;font-size:14px" onclick="switchNav('odds',null)">⚽ Check Odds</button>
+        </div>
+      </div>
+      <!-- STATS -->
+      <div class="flex mb-2" style="gap:10px">
+        <div class="card-flat flex-1 t-center" style="padding:14px 8px"><div class="t-xl w-700 c-primary" id="statScans">0</div><div class="t-xs c-gray">Scans</div></div>
+        <div class="card-flat flex-1 t-center" style="padding:14px 8px"><div class="t-xl w-700 c-danger" id="statFake">0</div><div class="t-xs c-gray">Fakes Found</div></div>
+        <div class="card-flat flex-1 t-center" style="padding:14px 8px"><div class="t-xl w-700 c-success" id="statSafe">0</div><div class="t-xs c-gray">Legit</div></div>
+      </div>
+      <!-- DAILY LIMIT -->
+      <div id="dailyLimitBar" class="card mb-2" style="border-left:4px solid var(--warning)">
+        <div class="flex f-between f-align mb-1">
+          <div class="t-sm w-700">Daily Free Checks</div>
+          <div class="t-sm w-700 c-warning" id="checksLeftLabel">2 left</div>
+        </div>
+        <div style="height:8px;background:var(--gray-100);border-radius:4px;overflow:hidden">
+          <div id="checksProgressBar" style="height:100%;background:var(--warning);border-radius:4px;transition:width 0.4s;width:100%"></div>
+        </div>
+        <div class="t-xs c-gray mt-1">2 free checks per day (alert + odds combined). <button class="t-xs c-primary w-600" onclick="showUpgrade()">Upgrade for unlimited →</button></div>
+      </div>
+      <!-- QUICK TOOLS -->
+      <div class="t-sm w-600 c-gray mb-2" style="padding:0 4px">TOOLS</div>
+      <div class="flex mb-2" style="gap:10px">
+        <button class="card flex-1 t-center" style="padding:var(--s2);cursor:pointer" onclick="switchNav('alert',null)"><div style="font-size:32px;margin-bottom:6px">🏦</div><div class="t-sm w-600">Fake Alert<br>Detector</div></button>
+        <button class="card flex-1 t-center" style="padding:var(--s2);cursor:pointer" onclick="switchNav('odds',null)"><div style="font-size:32px;margin-bottom:6px">⚽</div><div class="t-sm w-600">Odds<br>Checker</div></button>
+        <button class="card flex-1 t-center" style="padding:var(--s2);cursor:pointer" onclick="switchNav('more',null)"><div style="font-size:32px;margin-bottom:6px">☰</div><div class="t-sm w-600">More<br>Tools</div></button>
+      </div>
+      <!-- WARNING CARD -->
+      <div class="card mb-2" style="border-left:4px solid var(--primary)">
+        <div class="t-sm w-600 mb-1 c-primary">⚠️ How Scammers Operate</div>
+        <div class="t-sm c-gray">They send fake SMS alerts using ProBank/Flash Fund apps or edit betting odds after matches start. WuruwuruGo exposes all of it — instantly.</div>
+      </div>
+      <!-- FREE NOTICE -->
+      <div id="freeNotice" class="card mb-2" style="background:var(--warning-l);border:1.5px solid var(--warning)">
+        <div class="flex f-between f-align mb-1"><div class="t-sm w-700 c-warning">FREE PLAN</div><div class="t-xs c-warning">2 checks/day</div></div>
+        <div class="t-sm c-gray mb-2">Upgrade once — get unlimited checks forever, plus receipt image analysis.</div>
+        <button class="btn btn-primary w-full" style="height:40px;font-size:13px" onclick="showUpgrade()">Upgrade — ₦3,500 One-Time</button>
+      </div>
+      <!-- SHARE SECTION -->
+      <div class="card mb-2">
+        <div class="t-sm w-700 mb-1">📣 Tell Your People — Save a Life!</div>
+        <div class="t-xs c-gray mb-2">Someone you know almost got scammed yesterday. Share WuruwuruGo now — it's FREE and it saves money.</div>
+        <div class="share-grid" id="shareButtons"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT SCREEN -->
+  <div id="alert" class="screen">
+    <div class="header">
+      <button onclick="switchNav('home',null)"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gray-600)"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <div class="w-600">Fake Alert Detector</div>
+      <button onclick="document.getElementById('howModal').classList.remove('hidden')" class="badge badge-gray">How?</button>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)">
+      <!-- TABS: Text / Receipt Image -->
+      <div class="flex mb-2" style="border-bottom:2px solid var(--gray-100)">
+        <button class="tab active" id="tabTextBtn" onclick="switchAlertTab('text')">📋 Paste SMS Text</button>
+        <button class="tab" id="tabImgBtn" onclick="switchAlertTab('img')">🖼️ Upload Receipt <span class="badge badge-warning" style="font-size:10px;padding:2px 6px">PRO</span></button>
+      </div>
+
+      <!-- TEXT TAB -->
+      <div id="alertTextTab">
+        <div class="card mb-2" style="background:var(--primary-l)">
+          <div class="t-sm w-600 c-primary mb-1">📋 Paste the Full SMS Alert Below</div>
+          <div class="t-xs c-gray">Paste everything — bank name, amount, ref, time, date, balance. The more complete, the more accurate the analysis.</div>
+        </div>
+        <div class="t-sm w-600 mb-1 c-gray">Select Bank (Optional)</div>
+        <select class="input mb-2" id="bankSelect" style="background:var(--gray-100)">
+          <option value="">Auto-Detect Bank</option>
+          <optgroup label="Commercial Banks">
+            <option value="gtbank">GTBank / GTCo</option>
+            <option value="access">Access Bank</option>
+            <option value="zenith">Zenith Bank</option>
+            <option value="uba">UBA</option>
+            <option value="firstbank">First Bank</option>
+            <option value="fidelity">Fidelity Bank</option>
+            <option value="sterling">Sterling Bank</option>
+            <option value="union">Union Bank</option>
+            <option value="fcmb">FCMB</option>
+            <option value="stanbic">Stanbic IBTC</option>
+            <option value="ecobank">Ecobank</option>
+            <option value="heritage">Heritage Bank</option>
+            <option value="polaris">Polaris Bank</option>
+            <option value="wema">Wema Bank (ALAT)</option>
+            <option value="globus">Globus Bank</option>
+            <option value="citi">Citibank Nigeria</option>
+          </optgroup>
+          <optgroup label="Fintechs / MFBs">
+            <option value="opay">OPay</option>
+            <option value="palmpay">PalmPay</option>
+            <option value="kuda">Kuda Bank</option>
+            <option value="moniepoint">Moniepoint</option>
+            <option value="carbon">Carbon (Paylater)</option>
+            <option value="fairmoney">FairMoney</option>
+            <option value="vfd">VFD MFB</option>
+            <option value="eyowo">Eyowo</option>
+            <option value="rubies">Rubies Bank</option>
+            <option value="taj">TAJ Bank</option>
+            <option value="providus">Providus Bank</option>
+            <option value="lotus">Lotus Bank</option>
+          </optgroup>
+        </select>
+        <div class="t-sm w-600 mb-1 c-gray">Alert Message</div>
+        <textarea class="textarea mb-1" id="alertText" rows="9" placeholder="Paste the full SMS/notification text here...&#10;&#10;Example:&#10;Credit Alert&#10;Acct: XXXX1234&#10;Amt: NGN 50,000.00&#10;From: JOHN DOE&#10;Ref: GTB2406121234567&#10;Bal: NGN 125,000.00&#10;GTBank 12-Jun-24 10:30AM"></textarea>
+        <div class="flex f-between mb-2">
+          <div class="t-xs c-gray" id="alertCharCount">0 characters</div>
+          <button class="t-xs c-primary w-600" onclick="pasteClip()">📋 Paste</button>
+        </div>
+        <button class="btn btn-primary w-full mb-2" id="analyzeBtn" onclick="analyzeAlert()">🔍 Analyze Alert Now</button>
+        <button class="btn btn-ghost w-full t-sm" onclick="clearAlert()">Clear</button>
+      </div>
+
+      <!-- IMAGE RECEIPT TAB -->
+      <div id="alertImgTab" class="hidden">
+        <div class="card mb-2" style="background:var(--secondary);padding:var(--s3)">
+          <div class="t-sm w-700 c-white mb-1">🖼️ Receipt / Screenshot Analysis</div>
+          <div class="t-xs c-white" style="opacity:0.8">Upload any bank receipt, transfer screenshot, or payment notification image. Our engine extracts all text and runs 25+ checks for originality, format and authenticity.</div>
+          <div class="badge badge-warning mt-2">🔒 Unlimited Plan Required</div>
+        </div>
+        <div class="upload-zone" id="receiptDropZone" onclick="document.getElementById('receiptInput').click()">
+          <div style="font-size:48px">📸</div>
+          <div class="t-base w-600">Tap to Upload Receipt</div>
+          <div class="t-xs c-gray">JPG, PNG, PDF, Screenshot — Max 10MB</div>
+          <div class="t-xs c-gray mt-1">Supports: Bank receipts, transfer screenshots,<br>SMS screenshots, app notification screenshots</div>
+        </div>
+        <input type="file" id="receiptInput" accept="image/*" class="hidden" onchange="handleReceiptUpload(event)">
+        <div id="receiptPreviewWrap" class="hidden mt-2">
+          <img id="receiptPreview" style="width:100%;border-radius:12px;max-height:300px;object-fit:contain">
+          <button class="btn btn-primary w-full mt-2" id="analyzeReceiptBtn" onclick="analyzeReceipt()">🔍 Analyze Receipt Image</button>
+        </div>
+      </div>
+
+      <div id="alertResult" class="hidden mt-2"></div>
+    </div>
+  </div>
+
+  <!-- ODDS SCREEN -->
+  <div id="odds" class="screen">
+    <div class="header">
+      <button onclick="switchNav('home',null)"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gray-600)"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <div class="w-600">Odds Change Detector</div>
+      <button onclick="document.getElementById('oddsHelpModal').classList.remove('hidden')" class="badge badge-gray">How?</button>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)">
+      <div class="card mb-2" style="background:linear-gradient(135deg,var(--secondary),#2D0A4E)">
+        <div class="t-sm w-600 c-white mb-1">🚨 Stop Odds Manipulation</div>
+        <div class="t-xs c-white" style="opacity:0.8">Agents edit odds AFTER matches start. Save your code BEFORE kick-off — check AFTER to expose the wuruwuru.</div>
+      </div>
+      <!-- BOOKIE -->
+      <div class="t-sm w-600 mb-1 c-gray">Betting Platform</div>
+      <div class="flex mb-2" style="gap:8px;flex-wrap:wrap">
+        <button class="badge badge-primary bookie-btn active" data-bookie="bet9ja">Bet9ja</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="sportybet">SportyBet</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="betking">BetKing</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="1xbet">1xBet</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="nairabet">NairaBet</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="msport">MSport</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="paripesa">PariPesa</button>
+        <button class="badge badge-gray bookie-btn" data-bookie="betway">Betway</button>
+      </div>
+      <!-- BOOKING CODE -->
+      <div class="t-sm w-600 mb-1 c-gray">Booking / Coupon Code</div>
+      <div class="flex mb-2" style="gap:8px">
+        <input type="text" class="input" id="bookingCode" placeholder="e.g. ABC123456" style="flex:1;text-transform:uppercase">
+        <button class="btn btn-primary" style="height:50px;padding:0 16px;font-size:13px" onclick="saveOdds()">💾 Save</button>
+      </div>
+      <!-- MATCH DATE/TIME -->
+      <div class="flex mb-2" style="gap:8px">
+        <div style="flex:1">
+          <div class="t-sm w-600 mb-1 c-gray">Match Date</div>
+          <input type="date" class="input" id="matchDate" style="height:48px">
+        </div>
+        <div style="flex:1">
+          <div class="t-sm w-600 mb-1 c-gray">Kick-off Time</div>
+          <input type="time" class="input" id="matchTime" style="height:48px">
+        </div>
+      </div>
+      <!-- MANUAL ODDS -->
+      <div class="card mb-2" style="border:1.5px dashed var(--gray-300)">
+        <div class="t-sm w-600 mb-2 c-gray">📝 Enter Games & Odds (Before Match)</div>
+        <div id="manualOddsContainer">
+          <div class="flex mb-1" style="gap:6px">
+            <input type="text" class="input" style="flex:2;height:44px;font-size:13px" placeholder="e.g. Arsenal vs Chelsea">
+            <input type="text" class="input" style="flex:1;height:44px;font-size:13px" placeholder="Pick (1/X/2)">
+            <input type="number" class="input" style="width:72px;height:44px;font-size:13px" placeholder="Odd" step="0.01" min="1">
+            <button onclick="removeOddRow(this)" style="padding:0 6px;color:var(--danger);font-size:18px">✕</button>
+          </div>
+        </div>
+        <button class="btn btn-ghost w-full t-sm mt-1" style="border:1.5px dashed var(--gray-300);height:40px" onclick="addOddRow()">+ Add Game</button>
+      </div>
+      <!-- TOTAL ODDS -->
+      <div class="card-flat mb-2 flex f-between f-align" style="padding:12px var(--s2)">
+        <div class="t-sm w-600">Total Odds</div>
+        <div class="t-lg w-700 c-primary" id="totalOddsDisplay">—</div>
+      </div>
+      <button class="btn btn-accent w-full mb-2" onclick="checkOddsChange()">🔎 Check for Odds Change</button>
+      <button class="btn btn-ghost w-full t-sm mb-2" onclick="clearOdds()">Clear All</button>
+      <div id="oddsResult" class="hidden mt-1"></div>
+      <!-- SAVED -->
+      <div class="mt-2">
+        <div class="t-sm w-600 c-gray mb-2">SAVED CODES</div>
+        <div id="savedCodesList"><div class="t-sm c-gray t-center" style="padding:20px 0">No saved codes yet.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORE SCREEN -->
+  <div id="more" class="screen">
+    <div class="header">
+      <div class="w-600" style="font-size:16px">More</div>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)">
+      <!-- USSD CODES -->
+      <div class="t-sm w-600 c-gray mb-2">📞 NIGERIAN BANK USSD CODES</div>
+      <div class="card mb-3" id="ussdList"></div>
+      <!-- HISTORY -->
+      <div class="t-sm w-600 c-gray mb-2">📜 SCAN HISTORY</div>
+      <div id="historyList" class="mb-3"></div>
+      <!-- SHARE -->
+      <div class="card mb-2">
+        <div class="t-sm w-700 mb-2">📣 Share WuruwuruGo</div>
+        <div class="share-grid" id="shareButtons2"></div>
+      </div>
+      <!-- LINKS -->
+      <div class="card mb-2">
+        <button class="btn btn-ghost w-full" style="justify-content:flex-start;height:48px;border-bottom:1px solid var(--gray-100)" onclick="showScreen('terms')">📄 Terms of Service</button>
+        <button class="btn btn-ghost w-full" style="justify-content:flex-start;height:48px;border-bottom:1px solid var(--gray-100)" onclick="showScreen('privacy')">🔒 Privacy Policy</button>
+        <button class="btn btn-ghost w-full" style="justify-content:flex-start;height:48px;border-bottom:1px solid var(--gray-100)" onclick="showScreen('faq')">❓ FAQ</button>
+        <button class="btn btn-ghost w-full" style="justify-content:flex-start;height:48px" onclick="showUpgrade()">⭐ Upgrade to Unlimited</button>
+      </div>
+      <button class="btn btn-ghost w-full t-sm c-danger" onclick="doLogout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- TERMS SCREEN -->
+  <div id="terms" class="screen">
+    <div class="header">
+      <button onclick="history.back()"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gray-600)"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <div class="w-600">Terms of Service</div><div></div>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)" class="legal-content">
+      <h3>1. Acceptance of Terms</h3>
+      <p>By accessing or using WuruwuruGo ("the App"), you agree to be bound by these Terms of Service. If you do not agree, please discontinue use immediately. WuruwuruGo is operated by Solomon David ("the Operator") and is designed to assist users in Nigeria detect potentially fraudulent bank alerts and betting odds manipulation.</p>
+      <h3>2. Nature of the Service</h3>
+      <p>WuruwuruGo is a detection and awareness tool. It analyzes text-based SMS alerts and receipt images against known patterns of Nigerian bank alert formats, fraud signatures, and odds manipulation indicators. The App does NOT connect to any live banking system, does NOT verify balances in real-time, and does NOT have access to your bank account data.</p>
+      <ul>
+        <li>Results are advisory and probabilistic — not a definitive legal or financial determination.</li>
+        <li>The App should be used as a supplementary layer of verification alongside direct balance checks via your bank's official app or USSD codes.</li>
+        <li>A "Safe" result does not guarantee the alert is authentic. Always verify via your bank's official channel.</li>
+      </ul>
+      <h3>3. User Accounts</h3>
+      <p>You register with your full name and phone number. This data is stored locally in your browser (localStorage) and is NOT transmitted to any server. You are responsible for keeping your login credentials private. WuruwuruGo will never contact you to ask for your bank details, PIN, or password.</p>
+      <h3>4. Free and Paid Plans</h3>
+      <p>The Free Plan provides 2 checks per day (alert and odds checks combined). The Unlimited Plan provides unlimited checks upon a one-time payment of ₦3,500, verified via an unlock code sent after payment confirmation. Payments are non-refundable once an unlock code has been issued and activated. If your unlock code is lost, contact us on WhatsApp (08106610386) with proof of payment.</p>
+      <h3>5. Prohibited Use</h3>
+      <ul>
+        <li>You must not use WuruwuruGo to facilitate, test, or develop fraudulent tools.</li>
+        <li>You must not attempt to reverse-engineer, clone, or redistribute the App without written permission.</li>
+        <li>You must not share unlock codes with others. Each code is for one user only.</li>
+        <li>You must not attempt to bypass the free-plan limits through technical manipulation.</li>
+      </ul>
+      <h3>6. Disclaimer of Liability</h3>
+      <p>WuruwuruGo is provided "as is" without warranty of any kind. The Operator shall not be held liable for any financial loss arising from reliance on the App's analysis results. The ultimate responsibility for verifying any payment lies with the user. Use this tool as one of multiple verification steps — not as the sole determination.</p>
+      <h3>7. Intellectual Property</h3>
+      <p>All content, design, code, and logic within WuruwuruGo is the intellectual property of Solomon David. Unauthorized copying, reproduction, or redistribution is strictly prohibited and may attract legal consequences.</p>
+      <h3>8. Changes to Terms</h3>
+      <p>We reserve the right to update these Terms at any time. Continued use after changes are posted constitutes acceptance of the updated Terms.</p>
+      <h3>9. Governing Law</h3>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria.</p>
+      <h3>10. Contact</h3>
+      <p>For enquiries, disputes, or support: WhatsApp 08106610386 or contact Solomon David directly.</p>
+      <div style="height:40px"></div>
+    </div>
+  </div>
+
+  <!-- PRIVACY SCREEN -->
+  <div id="privacy" class="screen">
+    <div class="header">
+      <button onclick="history.back()"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gray-600)"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <div class="w-600">Privacy Policy</div><div></div>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)" class="legal-content">
+      <h3>Introduction</h3>
+      <p>WuruwuruGo ("we", "our", "the App"), operated by Solomon David, is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights as a user.</p>
+      <h3>1. Information We Collect</h3>
+      <p><strong>a) Registration Data:</strong> Your full name and phone number are collected during signup. This data is stored exclusively in your browser's localStorage and is NEVER transmitted to any external server, cloud database, or third party.</p>
+      <p><strong>b) Usage Data:</strong> Scan history, stats, and saved betting codes are stored locally in your browser. This data remains on your device only.</p>
+      <p><strong>c) Alert Text You Paste:</strong> SMS text you paste for analysis is processed entirely within your browser — it is not sent to any server. No AI cloud API is used for text analysis.</p>
+      <p><strong>d) Receipt Images:</strong> Images uploaded for receipt analysis are processed locally within your browser using the Canvas API. They are not uploaded to any server or third-party service.</p>
+      <h3>2. How We Use Your Information</h3>
+      <ul>
+        <li>To identify your account locally and restore your session.</li>
+        <li>To track your daily usage limits on the free plan.</li>
+        <li>To maintain your scan history for your personal reference.</li>
+      </ul>
+      <h3>3. Data Sharing</h3>
+      <p>We do NOT share, sell, or transfer your personal data to any third party, advertiser, or analytics platform. WuruwuruGo has no backend server that receives user data.</p>
+      <h3>4. Cookies & Local Storage</h3>
+      <p>The App uses browser localStorage to save your account, plan status, scan history, and saved odds codes. No cookies are used for tracking purposes. You may clear this data at any time by clearing your browser/app storage.</p>
+      <h3>5. Security</h3>
+      <p>Because all data stays on your device, there is no central database that can be breached to expose your information. However, if someone has access to your device and browser, they may be able to see your stored data. We recommend locking your device with a PIN or password.</p>
+      <h3>6. Children's Privacy</h3>
+      <p>WuruwuruGo is not intended for use by persons under the age of 18. We do not knowingly collect information from minors.</p>
+      <h3>7. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. The most current version will always be available within the App. Continued use of the App after updates constitutes acceptance.</p>
+      <h3>8. Your Rights</h3>
+      <p>Since all data is stored locally on your device, you have full control. You can delete your account data at any time by clearing the App's storage in your browser settings. There is nothing on any server to request deletion of.</p>
+      <h3>9. Contact</h3>
+      <p>For privacy-related enquiries: WhatsApp 08106610386 (Solomon David).</p>
+      <div style="height:40px"></div>
+    </div>
+  </div>
+
+  <!-- FAQ SCREEN -->
+  <div id="faq" class="screen">
+    <div class="header">
+      <button onclick="showScreen('more')"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gray-600)"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <div class="w-600">FAQ</div><div></div>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:var(--s2)" class="legal-content">
+      <h3>What is WuruwuruGo?</h3>
+      <p>WuruwuruGo is Nigeria's most advanced fake bank alert detector and betting odds manipulation checker. It analyzes SMS text, bank receipt images, and betting codes to expose fraud — all running entirely on your device with no internet needed for analysis.</p>
+      <h3>How does the fake alert detector work?</h3>
+      <p>It runs 25+ checks on the alert text: bank-specific format matching for 28 Nigerian banks, reference number pattern validation, sender ID verification, kobo decimal checks, spelling analysis, balance field detection, date/time format, account masking patterns, and known fraud app signatures (Flash Fund, ProBank). Every issue is explained clearly so you know exactly why a result is flagged.</p>
+      <h3>How does receipt image analysis work?</h3>
+      <p>When you upload a receipt image (Unlimited Plan only), the app extracts all visible text using your device's capabilities, then runs the same deep 25+ checks plus image-specific authenticity checks: font consistency, layout spacing, alignment patterns, and bank logo/colour context detection.</p>
+      <h3>How does the odds detector work?</h3>
+      <p>Save your booking code and the odds before the match starts. After the match, enter what the agent claims the final odds were. WuruwuruGo compares both and flags any changes — showing exactly which game's odds were edited and by how much.</p>
+      <h3>Is my data safe?</h3>
+      <p>100% safe. All data — your name, phone number, scan history — stays only on your device. Nothing is ever sent to a server. We have no database of user information.</p>
+      <h3>Can I use it without internet?</h3>
+      <p>Yes! Once the app is loaded or installed as a PWA, the bank alert detection and odds comparison work entirely offline. Only the social share links require internet.</p>
+      <h3>How many free checks do I get?</h3>
+      <p>You get 2 free checks per day — you can use both for bank alerts, both for odds, or one each. The counter resets every day at midnight.</p>
+      <h3>How do I upgrade?</h3>
+      <p>Transfer ₦3,500 to OPay account 8106610386 (Solomon David). Then WhatsApp your receipt and phone number to 08106610386. You'll receive an unlock code within minutes. Enter the code in the app to unlock Unlimited access forever.</p>
+      <h3>What if my code doesn't work?</h3>
+      <p>Contact Solomon David on WhatsApp (08106610386) with your receipt. Every valid payment gets a working code — no exceptions.</p>
+      <h3>Does it support all Nigerian banks?</h3>
+      <p>Yes — 28 Nigerian banks and fintechs are fully supported: GTBank, Access, Zenith, UBA, First Bank, Fidelity, Sterling, Union, FCMB, Stanbic IBTC, Ecobank, Heritage, Polaris, Wema/ALAT, Globus, Citibank, OPay, PalmPay, Kuda, Moniepoint, Carbon, FairMoney, VFD MFB, Eyowo, Rubies, TAJ, Providus, and Lotus Bank.</p>
+      <div style="height:40px"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="nav-bar">
+    <button class="nav-item active" id="nav-home" onclick="switchNav('home',this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span>Home</span>
+    </button>
+    <button class="nav-item" id="nav-alert" onclick="switchNav('alert',this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg><span>Alert</span>
+    </button>
+    <button class="nav-item" id="nav-odds" onclick="switchNav('odds',this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg><span>Odds</span>
+    </button>
+    <button class="nav-item" id="nav-more" onclick="switchNav('more',this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg><span>More</span>
+    </button>
+  </div>
+</div><!-- end #app -->
+
+<!-- UPGRADE MODAL -->
+<div id="upgradeModal" class="modal hidden">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="p-3">
+      <div class="t-center mb-3">
+        <div style="font-size:60px;margin-bottom:8px">🛡️</div>
+        <div class="t-xl w-700">Upgrade to Unlimited</div>
+        <div class="t-sm c-gray mt-1">One payment. Unlimited protection. Forever.</div>
+      </div>
+      <div class="card mb-2" style="background:var(--success-l)">
+        <div class="flex f-align mb-2" style="gap:10px"><span style="font-size:20px">✅</span><span class="w-600">Unlimited bank alert scans (no daily limit)</span></div>
+        <div class="flex f-align mb-2" style="gap:10px"><span style="font-size:20px">✅</span><span class="w-600">Unlimited odds checks</span></div>
+        <div class="flex f-align mb-2" style="gap:10px"><span style="font-size:20px">✅</span><span class="w-600">Receipt image forensic analysis 🖼️</span></div>
+        <div class="flex f-align mb-2" style="gap:10px"><span style="font-size:20px">✅</span><span class="w-600">Deep 25+ checkpoint AI engine</span></div>
+        <div class="flex f-align mb-2" style="gap:10px"><span style="font-size:20px">✅</span><span class="w-600">Full history & scan reports</span></div>
+        <div class="flex f-align" style="gap:10px"><span style="font-size:20px">✅</span><span class="w-600">Works offline — no internet needed</span></div>
+      </div>
+      <div class="card t-center mb-3">
+        <div class="t-xs c-gray">One-Time Payment — Yours Forever</div>
+        <div class="t-3xl w-800 c-primary">₦3,500</div>
+        <div class="t-sm c-gray"><s style="color:var(--danger)">₦15,000</s> &nbsp;<span class="badge badge-danger">77% OFF</span></div>
+      </div>
+      <div class="card mb-2">
+        <div class="w-600 mb-2">💳 Payment Steps:</div>
+        <div class="t-sm mb-2">1. Transfer <strong>₦3,500</strong> to this OPay account:</div>
+        <div class="card-flat flex f-between f-align mb-2" style="padding:12px">
+          <div>
+            <div class="t-xs c-gray">Account Number</div>
+            <div class="t-lg w-700">8106610386</div>
+            <div class="t-xs c-gray">OPay — Solomon David</div>
+          </div>
+          <button class="btn btn-secondary" style="height:38px;padding:0 14px;font-size:13px" onclick="copyText('8106610386','Account number copied!')">Copy</button>
+        </div>
+        <div class="t-sm mb-2">2. Send receipt + your phone number to us on WhatsApp:</div>
+        <button class="btn w-full mb-2" style="background:#25D366;color:white;height:48px" onclick="openWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp: 08106610386
+        </button>
+        <div class="t-xs c-gray t-center mb-2">Send receipt + your name & phone. You'll get your code in minutes ⚡</div>
+        <div class="t-sm">3. Enter your <strong>unlock code</strong> below:</div>
+      </div>
+      <div class="card mb-2" style="border:2px solid var(--primary)">
+        <div class="w-600 mb-2 c-primary">🔑 Enter Unlock Code</div>
+        <div class="flex" style="gap:8px">
+          <input type="text" class="input" id="unlockCodeInput" placeholder="e.g. WURUWURUGO-045" style="flex:1;text-transform:uppercase">
+          <button class="btn btn-primary" style="height:50px;padding:0 16px" onclick="verifyCode()">Unlock</button>
+        </div>
+        <div id="codeMsg" class="t-sm mt-1 hidden"></div>
+      </div>
+      <button class="btn btn-ghost w-full mb-2" onclick="closeModal('upgradeModal')">Maybe Later</button>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS MODAL -->
+<div id="howModal" class="modal hidden">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="p-3">
+      <div class="t-xl w-700 mb-3">🏦 How Fake Alert Detection Works</div>
+      <div class="card mb-2" style="border-left:4px solid var(--primary)"><div class="w-600 mb-1">25+ Security Checkpoints</div><div class="t-sm c-gray">Format validation, sender ID check, reference number pattern, kobo decimal, account masking, balance field, date/time format, credit keywords, bank-specific patterns, known fraud app signatures (ProBank, Flash Fund), spelling anomalies, amount consistency — all analyzed in under 2 seconds.</div></div>
+      <div class="card mb-2" style="border-left:4px solid var(--accent)"><div class="w-600 mb-1">28 Nigerian Banks Supported</div><div class="t-sm c-gray">GTBank, Access, Zenith, UBA, First Bank, Fidelity, Ecobank, OPay, PalmPay, Kuda, Moniepoint, Carbon, and 16 more — each with their unique alert formats fully encoded.</div></div>
+      <div class="card mb-2" style="border-left:4px solid var(--success)"><div class="w-600 mb-1">Risk Score + Full Breakdown</div><div class="t-sm c-gray">Every check is shown — pass or fail. You get a risk percentage and a clear verdict: SAFE ✅, SUSPICIOUS ⚠️, or FAKE ❌. No guessing.</div></div>
+      <div class="card mb-2" style="background:var(--danger-l)"><div class="w-600 mb-1 c-danger">⚠️ Always Verify Your Balance</div><div class="t-sm c-gray">WuruwuruGo is a powerful tool, but always confirm by checking your bank balance directly via app or USSD before releasing goods or cash.</div></div>
+      <button class="btn btn-primary w-full" onclick="closeModal('howModal')">Got It!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ODDS HELP MODAL -->
+<div id="oddsHelpModal" class="modal hidden">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="p-3">
+      <div class="t-xl w-700 mb-3">⚽ How Odds Detection Works</div>
+      <div class="card mb-2" style="border-left:4px solid var(--primary)"><div class="w-600 mb-1">STEP 1 — Before the Match</div><div class="t-sm c-gray">Enter your booking code and each game's odds manually. Click "Save." This timestamps your real odds permanently on your device.</div></div>
+      <div class="card mb-2" style="border-left:4px solid var(--danger)"><div class="w-600 mb-1">STEP 2 — After the Match</div><div class="t-sm c-gray">Load the saved code, enter what the agent now claims the odds are, and click "Check for Odds Change." WuruwuruGo compares everything and shows any manipulation.</div></div>
+      <div class="card mb-2" style="border-left:4px solid var(--success)"><div class="w-600 mb-1">What You Get</div><div class="t-sm c-gray">A clear game-by-game comparison: "Arsenal vs Chelsea: ODDS CHANGED 2.50 → 1.80 ❌ WURUWURU DETECTED" — with exact difference and percentage change.</div></div>
+      <button class="btn btn-primary w-full" onclick="closeModal('oddsHelpModal')">Got It!</button>
+    </div>
+  </div>
+</div>
+
+<div id="toastEl" class="toast hidden"></div>
+
+<script>
+// ============================================================
+// CONSTANTS & DATA
+// ============================================================
+const APP_URL = 'https://wuruwurugo.tiiny.site';
+const SHARE_MSG = encodeURIComponent('🚨 STOP! Before you accept that transfer — are you sure it\'s real?\n\nI use WuruwuruGo to instantly detect fake bank alerts & edited betting odds. It has saved me from losing money TWICE already.\n\n✅ FREE to try — works on all Nigerian banks\n✅ Also catches bet agents who change your odds after match starts\n✅ Runs offline — no data needed\n\nTry it NOW 👇\n' + APP_URL);
+const SHARE_TITLE = encodeURIComponent('🚨 WuruwuruGo – Catch Fake Alerts Before You Lose Money!');
+
+const VALID_CODES = new Set([
+  "WURUWURUGO-001","WURUWURUGO-002","WURUWURUGO-003","WURUWURUGO-004","WURUWURUGO-005",
+  "WURUWURUGO-006","WURUWURUGO-007","WURUWURUGO-008","WURUWURUGO-009","WURUWURUGO-010",
+  "WURUWURUGO-011","WURUWURUGO-012","WURUWURUGO-013","WURUWURUGO-014","WURUWURUGO-015",
+  "WURUWURUGO-016","WURUWURUGO-017","WURUWURUGO-018","WURUWURUGO-019","WURUWURUGO-020",
+  "WURUWURUGO-021","WURUWURUGO-022","WURUWURUGO-023","WURUWURUGO-024","WURUWURUGO-025",
+  "WURUWURUGO-026","WURUWURUGO-027","WURUWURUGO-028","WURUWURUGO-029","WURUWURUGO-030",
+  "WURUWURUGO-031","WURUWURUGO-032","WURUWURUGO-033","WURUWURUGO-034","WURUWURUGO-035",
+  "WURUWURUGO-036","WURUWURUGO-037","WURUWURUGO-038","WURUWURUGO-039","WURUWURUGO-040",
+  "WURUWURUGO-041","WURUWURUGO-042","WURUWURUGO-043","WURUWURUGO-044","WURUWURUGO-045",
+  "WURUWURUGO-046","WURUWURUGO-047","WURUWURUGO-048","WURUWURUGO-049","WURUWURUGO-050",
+  "WURUWURUGO-051","WURUWURUGO-052","WURUWURUGO-053","WURUWURUGO-054","WURUWURUGO-055",
+  "WURUWURUGO-056","WURUWURUGO-057","WURUWURUGO-058","WURUWURUGO-059","WURUWURUGO-060",
+  "WURUWURUGO-061","WURUWURUGO-062","WURUWURUGO-063","WURUWURUGO-064","WURUWURUGO-065",
+  "WURUWURUGO-066","WURUWURUGO-067","WURUWURUGO-068","WURUWURUGO-069","WURUWURUGO-070",
+  "WURUWURUGO-071","WURUWURUGO-072","WURUWURUGO-073","WURUWURUGO-074","WURUWURUGO-075",
+  "WURUWURUGO-076","WURUWURUGO-077","WURUWURUGO-078","WURUWURUGO-079","WURUWURUGO-080",
+  "WURUWURUGO-081","WURUWURUGO-082","WURUWURUGO-083","WURUWURUGO-084","WURUWURUGO-085",
+  "WURUWURUGO-086","WURUWURUGO-087","WURUWURUGO-088","WURUWURUGO-089","WURUWURUGO-090",
+  "WURUWURUGO-091","WURUWURUGO-092","WURUWURUGO-093","WURUWURUGO-094","WURUWURUGO-095",
+  "WURUWURUGO-096","WURUWURUGO-097","WURUWURUGO-098","WURUWURUGO-099","WURUWURUGO-100",
+  "WURUWURUGO-101","WURUWURUGO-102","WURUWURUGO-103","WURUWURUGO-104","WURUWURUGO-105",
+  "WURUWURUGO-106","WURUWURUGO-107","WURUWURUGO-108","WURUWURUGO-109","WURUWURUGO-110",
+  "WURUWURUGO-111","WURUWURUGO-112","WURUWURUGO-113","WURUWURUGO-114","WURUWURUGO-115",
+  "WURUWURUGO-116","WURUWURUGO-117","WURUWURUGO-118","WURUWURUGO-119","WURUWURUGO-120",
+  "WURUWURUGO-121","WURUWURUGO-122","WURUWURUGO-123","WURUWURUGO-124","WURUWURUGO-125",
+  "WURUWURUGO-126","WURUWURUGO-127","WURUWURUGO-128","WURUWURUGO-129","WURUWURUGO-130",
+  "WURUWURUGO-131","WURUWURUGO-132","WURUWURUGO-133","WURUWURUGO-134","WURUWURUGO-135",
+  "WURUWURUGO-136","WURUWURUGO-137","WURUWURUGO-138","WURUWURUGO-139","WURUWURUGO-140",
+  "WURUWURUGO-141","WURUWURUGO-142","WURUWURUGO-143","WURUWURUGO-144","WURUWURUGO-145",
+  "WURUWURUGO-146","WURUWURUGO-147","WURUWURUGO-148","WURUWURUGO-149","WURUWURUGO-150",
+  "WURUWURUGO-151","WURUWURUGO-152","WURUWURUGO-153","WURUWURUGO-154","WURUWURUGO-155",
+  "WURUWURUGO-156","WURUWURUGO-157","WURUWURUGO-158","WURUWURUGO-159","WURUWURUGO-160",
+  "WURUWURUGO-161","WURUWURUGO-162","WURUWURUGO-163","WURUWURUGO-164","WURUWURUGO-165",
+  "WURUWURUGO-166","WURUWURUGO-167","WURUWURUGO-168","WURUWURUGO-169","WURUWURUGO-170",
+  "WURUWURUGO-171","WURUWURUGO-172","WURUWURUGO-173","WURUWURUGO-174","WURUWURUGO-175",
+  "WURUWURUGO-176","WURUWURUGO-177","WURUWURUGO-178","WURUWURUGO-179","WURUWURUGO-180",
+  "WURUWURUGO-181","WURUWURUGO-182","WURUWURUGO-183","WURUWURUGO-184","WURUWURUGO-185",
+  "WURUWURUGO-186","WURUWURUGO-187","WURUWURUGO-188","WURUWURUGO-189","WURUWURUGO-190",
+  "WURUWURUGO-191","WURUWURUGO-192","WURUWURUGO-193","WURUWURUGO-194","WURUWURUGO-195",
+  "WURUWURUGO-196","WURUWURUGO-197","WURUWURUGO-198","WURUWURUGO-199","WURUWURUGO-200",
+]);
+
+// ============================================================
+// COMPLETE BANK SIGNATURE DATABASE — 28 BANKS
+// ============================================================
+const BANK_DB = {
+  gtbank:{name:"GTBank / GTCo",senderIds:["GTBank","GTB","GTBANK","GT-BANK","GTBNK","GTCo"],keywords:["GTBank","Guaranty Trust","GT Bank","GTCo","ACCT:","AC:"],refPattern:/GTB\d{7,}|NIP\d{10,}/i,accountMask:/\*{2,}\d{4}|x{2,}\d{4}/i,amountFmt:/NGN\s?[\d,]+\.\d{2}/i,creditWords:["Credit Alert","Credit:","Cr:","Amt Rcvd"],ussd:"*737#",format:"GTBank Credit Alert\nAcct: XXXX1234\nAmt: NGN 50,000.00\nDesc: From JOHN DOE\nRef: GTB2406121234567\nBal: NGN125,000.00\nDate: 12-Jun-24 10:30AM"},
+  access:{name:"Access Bank",senderIds:["AccessBank","Access","ACCESSBANK","Access Bank","ABP"],keywords:["Access Bank","AccessBank","A/C","Access"],refPattern:/\d{12,}/,accountMask:/\*{2,}\d{4}|[Xx]{2,}\d{4}/,amountFmt:/N[\d,]+\.\d{2}/,creditWords:["Credit Alert","Credit:","Cr.","Amount Credited"],ussd:"*901#",format:"Access Bank Credit Alert\nA/C: XXXXXXXX1234\nAmt: N50,000.00\nFrom: JOHN DOE\nDate: 12/06/24 10:30\nRef: 123456789012\nBal: N125,000.00"},
+  zenith:{name:"Zenith Bank",senderIds:["Zenith","ZenithBank","ZENITH","ZENITHBANK","ZNB"],keywords:["Zenith","ZenithBank","Zenith Bank","ZBP"],refPattern:/ZBP\d+|\d{14,}/,accountMask:/\*{2,}\d{4}|\d{2}\*{4,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit:","Cr:","Amount:","Credit Alert"],ussd:"*966#",format:"ZENITH BANK ALERT\nCredit: NGN50,000.00\nAcct: **1234\nFrom: JOHN DOE\nDate: 12/06/2024\nRef: 12345678901234\nBal: NGN125,000.00"},
+  uba:{name:"UBA",senderIds:["UBA","UBABank","UBABANK","UBA-BANK"],keywords:["UBA","United Bank","UBA Alert","UBA Credit"],refPattern:/\d{12,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit Alert","Credited","Amount Received"],ussd:"*919#",format:"UBA Credit Alert\nAccount: XXXXXX1234\nAmount: NGN50,000.00\nSender: JOHN DOE\nDate: 12-Jun-2024\nRef: 123456789012\nBalance: NGN125,000.00"},
+  firstbank:{name:"First Bank",senderIds:["FirstBank","1stBank","FIRSTBANK","First Bank","FBN","1stMonie"],keywords:["First Bank","FirstBank","FBN","First Bank of Nigeria","1stMonie"],refPattern:/FBN\d+|\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit Alert","Credited","Cr"],ussd:"*894#",format:"FirstBank Credit Alert\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nDate: 12/06/24\nRef: FBN1234567890\nBal: NGN125,000.00"},
+  fidelity:{name:"Fidelity Bank",senderIds:["Fidelity","FIDELITY","FidelityBank"],keywords:["Fidelity Bank","FidelityBank","Fidelity"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Cr.","Amount Received"],ussd:"*770#",format:"Fidelity Bank Alert\nAcct: XXXX1234\nCr: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\n12/06/24 10:30"},
+  sterling:{name:"Sterling Bank",senderIds:["Sterling","STERLING","SterlingBank"],keywords:["Sterling Bank","Sterling","SterlingBank"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr"],ussd:"*822#",format:"Sterling Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nSender: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\nDate: 12/06/24"},
+  union:{name:"Union Bank",senderIds:["UnionBank","Union","UNIONBANK"],keywords:["Union Bank","UnionBank","UBN"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr"],ussd:"*826#",format:"Union Bank Credit Alert\nAcct: XXXX1234\nCr: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\n12/06/24 10:30"},
+  fcmb:{name:"FCMB",senderIds:["FCMB","FCMBAlerts","FCMB-NG"],keywords:["FCMB","First City Monument","FCMB Alert"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr."],ussd:"*329#",format:"FCMB Credit Alert\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\n12/06/24"},
+  stanbic:{name:"Stanbic IBTC",senderIds:["StanbicIBTC","Stanbic","STANBIC","StanbicBank"],keywords:["Stanbic IBTC","Stanbic","SIBTC"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr"],ussd:"*909#",format:"Stanbic IBTC Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\n12/06/24"},
+  ecobank:{name:"Ecobank",senderIds:["Ecobank","ECOBANK","EcobankNG"],keywords:["Ecobank","EcobankNigeria","Ecobank NG"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr."],ussd:"*326#",format:"Ecobank Credit Alert\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\n12/06/24"},
+  heritage:{name:"Heritage Bank",senderIds:["Heritage","HeritageBk","HERITAGE"],keywords:["Heritage Bank","HeritageBank"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited"],ussd:"*745#",format:"Heritage Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  polaris:{name:"Polaris Bank",senderIds:["Polaris","PolarisBank","POLARIS"],keywords:["Polaris Bank","PolarisBank","Polaris"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited"],ussd:"*833#",format:"Polaris Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  wema:{name:"Wema Bank / ALAT",senderIds:["Wema","WemaBank","WEMA","ALAT"],keywords:["Wema Bank","WemaBank","ALAT","Wema"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr."],ussd:"*945#",format:"Wema Bank Credit Alert\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00\n12/06/24"},
+  globus:{name:"Globus Bank",senderIds:["Globus","GlobusBank","GLOBUS"],keywords:["Globus Bank","GlobusBank"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited"],ussd:"*989#",format:"Globus Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  citi:{name:"Citibank Nigeria",senderIds:["Citibank","CITIBANK","Citi"],keywords:["Citibank","Citi","CitiBank Nigeria"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}|N[\d,]+\.\d{2}/,creditWords:["Credit","Credited","Cr."],ussd:"N/A",format:"Citibank Credit Alert\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  opay:{name:"OPay",senderIds:["OPay","OPAY","OPay-NG","OPay Nigeria","OPay Alert"],keywords:["OPay","Opay","opay","O-Pay","You have received","received from"],refPattern:/M\d{10,}|OP\d{10,}/,accountMask:/\*{3,}\d{3,4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["received","You have received","Credit","Cr:"],ussd:"*955#",format:"OPay Credit\nYou received ₦50,000.00\nFrom: JOHN DOE\nRef: M01234567890123\nTime: 12:30PM, 12 Jun 2024\nBalance: ₦125,000.00"},
+  palmpay:{name:"PalmPay",senderIds:["PalmPay","PALMPAY","Palm-Pay","PalmPay-NG","Palmpay"],keywords:["PalmPay","Palmpay","palmpay","transferred to you"],refPattern:/PP\d+|\d{10,}/,accountMask:/\*{3,}\d{3,4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["Credit","received","transferred","Credited"],ussd:"*951#",format:"PalmPay Alert\nCredit: ₦50,000.00\nFrom: JOHN DOE\nRef: PP1234567890\nTime: 12:30PM 12-Jun-2024\nBal: ₦125,000.00"},
+  kuda:{name:"Kuda Bank",senderIds:["Kuda","KudaBank","KUDA","Kuda Bank","Kuda MFB"],keywords:["Kuda","KudaBank","Kuda Bank","You got","received from"],refPattern:/KDA\d+|\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["You got","received","Credit","Cr"],ussd:"*7080#",format:"Kuda Credit\nYou got ₦50,000.00 from JOHN DOE\nRef: KDA1234567890\n12 Jun 2024, 12:30PM\nBal: ₦125,000.00"},
+  moniepoint:{name:"Moniepoint",senderIds:["Moniepoint","MONIEPOINT","MoniePnt","Moniepnt","TeamApt"],keywords:["Moniepoint","moniepoint","TeamApt","received","MoniePoint"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["Credit","received","Credit Alert"],ussd:"*5573#",format:"Moniepoint Credit Alert\nAmt: ₦50,000.00\nFrom: JOHN DOE\nAcct: **1234\nRef: 1234567890\nDate: 12 Jun 2024\nBal: ₦125,000.00"},
+  carbon:{name:"Carbon (Paylater)",senderIds:["Carbon","CarbonNG","Paylater","CARBON"],keywords:["Carbon","Paylater","Carbon Bank"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["Credit","received","credited"],ussd:"*1303#",format:"Carbon Credit\nYou received ₦50,000.00 from JOHN DOE\nRef: 1234567890\n12 Jun 2024, 12:30PM"},
+  fairmoney:{name:"FairMoney",senderIds:["FairMoney","FAIRMONEY","FairmoneyMFB"],keywords:["FairMoney","Fairmoney","FairMoney MFB"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["Credit","received","transferred"],ussd:"*322#",format:"FairMoney Credit\nAmt: ₦50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nDate: 12/06/24"},
+  vfd:{name:"VFD MFB",senderIds:["VFD","VFDBank","VFDMFB","v-bank"],keywords:["VFD","v-bank","VFD MFB"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/₦[\d,]+\.?\d{0,2}|NGN[\d,]+\.?\d{0,2}/,creditWords:["Credit","received"],ussd:"N/A",format:"VFD MFB Credit\nAmt: ₦50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nDate: 12/06/24"},
+  eyowo:{name:"Eyowo",senderIds:["Eyowo","EYOWO"],keywords:["Eyowo","eyowo"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/₦[\d,]+\.?\d{0,2}/,creditWords:["Credit","received"],ussd:"*4255#",format:"Eyowo Credit\n₦50,000.00 from JOHN DOE\nRef: 1234567890\n12/06/24 12:30PM"},
+  rubies:{name:"Rubies Bank",senderIds:["Rubies","RubiesBank","RUBIES"],keywords:["Rubies Bank","RubiesBank","Rubies"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}/,creditWords:["Credit","received","Credited"],ussd:"*7797#",format:"Rubies Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  taj:{name:"TAJ Bank",senderIds:["TAJBank","TAJ","TAJBANK"],keywords:["TAJ Bank","TAJBank","TAJ"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}/,creditWords:["Credit","received"],ussd:"*898#",format:"TAJ Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  providus:{name:"Providus Bank",senderIds:["Providus","ProvidusBank","PROVIDUS"],keywords:["Providus Bank","ProvidusBank","Providus"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}/,creditWords:["Credit","received","Credited"],ussd:"N/A",format:"Providus Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+  lotus:{name:"Lotus Bank",senderIds:["Lotus","LotusBank","LOTUS"],keywords:["Lotus Bank","LotusBank","Lotus"],refPattern:/\d{10,}/,accountMask:/\*{2,}\d{4}/,amountFmt:/NGN[\d,]+\.\d{2}/,creditWords:["Credit","received"],ussd:"*5757#",format:"Lotus Bank Credit\nAcct: **1234\nAmt: NGN50,000.00\nFrom: JOHN DOE\nRef: 1234567890\nBal: NGN125,000.00"},
+};
+
+const USSD_CODES = [
+  {bank:"GTBank / GTCo",ussd:"*737#",service:"Balance, Transfer, Airtime"},
+  {bank:"Access Bank",ussd:"*901#",service:"Balance, Transfer, Bills"},
+  {bank:"Zenith Bank",ussd:"*966#",service:"Balance, Transfer, Airtime"},
+  {bank:"UBA",ussd:"*919#",service:"Balance, Transfer, Loans"},
+  {bank:"First Bank",ussd:"*894#",service:"Balance, Transfer, Airtime"},
+  {bank:"Fidelity Bank",ussd:"*770#",service:"Balance, Transfer, Airtime"},
+  {bank:"Sterling Bank",ussd:"*822#",service:"Balance, Transfer, Bills"},
+  {bank:"Union Bank",ussd:"*826#",service:"Balance, Transfer"},
+  {bank:"FCMB",ussd:"*329#",service:"Balance, Transfer, Loans"},
+  {bank:"Stanbic IBTC",ussd:"*909#",service:"Balance, Transfer"},
+  {bank:"Ecobank",ussd:"*326#",service:"Balance, Transfer, Airtime"},
+  {bank:"Heritage Bank",ussd:"*745#",service:"Balance, Transfer"},
+  {bank:"Polaris Bank",ussd:"*833#",service:"Balance, Transfer"},
+  {bank:"Wema Bank / ALAT",ussd:"*945#",service:"Balance, Transfer"},
+  {bank:"Globus Bank",ussd:"*989#",service:"Balance, Transfer"},
+  {bank:"OPay",ussd:"*955#",service:"Balance, Transfer, Airtime"},
+  {bank:"PalmPay",ussd:"*951#",service:"Balance, Transfer"},
+  {bank:"Kuda Bank",ussd:"*7080#",service:"Balance, Transfer"},
+  {bank:"Moniepoint",ussd:"*5573#",service:"Balance, Transfer"},
+  {bank:"Carbon",ussd:"*1303#",service:"Balance, Transfer"},
+  {bank:"FairMoney",ussd:"*322#",service:"Balance, Transfer"},
+  {bank:"Eyowo",ussd:"*4255#",service:"Balance, Transfer"},
+  {bank:"Rubies Bank",ussd:"*7797#",service:"Balance, Transfer"},
+  {bank:"TAJ Bank",ussd:"*898#",service:"Balance, Transfer"},
+  {bank:"Lotus Bank",ussd:"*5757#",service:"Balance, Transfer"},
+];
+
+// ============================================================
+// STATE
+// ============================================================
+const ST = {
+  plan:'free', checksToday:0, dailyLimit:2,
+  totalScans:0, totalFake:0, totalSafe:0,
+  savedCodes:[], history:[], activeBookie:'bet9ja',
+  user:null
+};
+const usedCodes = new Set(JSON.parse(localStorage.getItem('wg_used_codes')||'[]'));
+
+// ============================================================
+// AUTH
+// ============================================================
+function showAuthView(id){
+  document.querySelectorAll('#authWrap > div').forEach(d=>d.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+function normName(n){return n.trim().toLowerCase().replace(/\s+/,' ');}
+function normPhone(p){return p.replace(/\D/g,'').replace(/^0/,'234').replace(/^234/,'234');}
+
+function doSignup(){
+  const name=document.getElementById('signupName').value.trim();
+  const phone=document.getElementById('signupPhone').value.trim();
+  const agree=document.getElementById('signupAgree').checked;
+  const err=document.getElementById('signupError');
+  err.classList.add('hidden');
+  if(!name||name.length<2){err.textContent='Please enter your full name';err.classList.remove('hidden');return;}
+  if(!phone||phone.replace(/\D/g,'').length<10){err.textContent='Enter a valid phone number';err.classList.remove('hidden');return;}
+  if(!agree){err.textContent='Please accept the Terms of Service to continue';err.classList.remove('hidden');return;}
+  const np=normPhone(phone);
+  // Check if account already exists
+  const accounts=JSON.parse(localStorage.getItem('wg_accounts')||'[]');
+  if(accounts.find(a=>normPhone(a.phone)===np)){err.textContent='This phone number is already registered. Please login.';err.classList.remove('hidden');return;}
+  const newAcc={name,phone:np,created:new Date().toISOString()};
+  accounts.push(newAcc);
+  localStorage.setItem('wg_accounts',JSON.stringify(accounts));
+  localStorage.setItem('wg_current_user',JSON.stringify(newAcc));
+  launchApp(newAcc);
+}
+
+function doLogin(){
+  const name=document.getElementById('loginName').value.trim();
+  const phone=document.getElementById('loginPhone').value.trim();
+  const err=document.getElementById('loginError');
+  err.classList.add('hidden');
+  if(!name||!phone){err.textContent='Enter both your name and phone number';err.classList.remove('hidden');return;}
+  const np=normPhone(phone);
+  const accounts=JSON.parse(localStorage.getItem('wg_accounts')||'[]');
+  const acc=accounts.find(a=>normName(a.name)===normName(name)&&normPhone(a.phone)===np);
+  if(!acc){err.textContent='Account not found. Check your name & number, or create a new account.';err.classList.remove('hidden');return;}
+  localStorage.setItem('wg_current_user',JSON.stringify(acc));
+  launchApp(acc);
+}
+
+function doLogout(){
+  if(!confirm('Logout? Your data stays saved.'))return;
+  localStorage.removeItem('wg_current_user');
+  location.reload();
+}
+
+function launchApp(user){
+  ST.user=user;
+  document.getElementById('authWrap').style.display='none';
+  document.getElementById('splash').style.display='flex';
+  loadState();
+  document.getElementById('greetUser').textContent='Hi, '+user.name.split(' ')[0]+'! 👋';
+  document.getElementById('app').style.display='flex';
+  updateStats(); updateDailyBar(); renderUssd(); renderHistory(); renderSavedCodes();
+  buildShareButtons('shareButtons'); buildShareButtons('shareButtons2');
+  setTimeout(()=>{
+    const s=document.getElementById('splash');
+    s.style.opacity='0';s.style.pointerEvents='none';
+    setTimeout(()=>s.style.display='none',600);
+  },2800);
+}
+
+// ============================================================
+// PERSISTENCE
+// ============================================================
+function storeKey(){return 'wg_state_'+(ST.user?.phone||'anon');}
+function saveState(){
+  localStorage.setItem(storeKey(),JSON.stringify({
+    plan:ST.plan,checksToday:ST.checksToday,totalScans:ST.totalScans,
+    totalFake:ST.totalFake,totalSafe:ST.totalSafe,
+    savedCodes:ST.savedCodes,history:ST.history.slice(0,100),
+    lastDate:new Date().toDateString()
+  }));
+}
+function loadState(){
+  try{
+    const d=JSON.parse(localStorage.getItem(storeKey())||'{}');
+    if(d.lastDate!==new Date().toDateString())d.checksToday=0;
+    Object.assign(ST,d);
+    const plan=localStorage.getItem('wg_plan_'+(ST.user?.phone||''));
+    if(plan==='unlimited')ST.plan='unlimited';
+  }catch(e){}
+}
+
+// ============================================================
+// NAV & SCREEN
+// ============================================================
+function showScreen(id){
+  document.querySelectorAll('#app .screen').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el)el.classList.add('active');
+}
+function switchNav(id,btn){
+  showScreen(id);
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  else{const nb=document.getElementById('nav-'+id);if(nb)nb.classList.add('active');}
+  if(id==='more'){renderHistory();renderSavedCodes();}
+}
+
+// ============================================================
+// DAILY LIMIT
+// ============================================================
+function canCheck(){return ST.plan==='unlimited'||ST.checksToday<ST.dailyLimit;}
+function useCheck(){ST.checksToday++;saveState();updateDailyBar();}
+function updateDailyBar(){
+  if(ST.plan==='unlimited'){
+    document.getElementById('dailyLimitBar').classList.add('hidden');
+    document.getElementById('freeNotice').classList.add('hidden');
+    return;
+  }
+  const left=Math.max(0,ST.dailyLimit-ST.checksToday);
+  document.getElementById('checksLeftLabel').textContent=left+' left today';
+  const pct=(left/ST.dailyLimit)*100;
+  document.getElementById('checksProgressBar').style.width=pct+'%';
+  document.getElementById('checksProgressBar').style.background=left===0?'var(--danger)':left===1?'var(--warning)':'var(--success)';
+}
+
+// ============================================================
+// ALERT ANALYSIS ENGINE — 25+ CHECKS
+// ============================================================
+function analyzeAlertText(text,selBank){
+  const raw=text.trim(); const lower=raw.toLowerCase();
+  const issues=[],positives=[],checks=[];
+  let risk=0;
+
+  // Detect bank
+  let bankKey=selBank||null,bankSig=null;
+  if(!bankKey){for(const[k,s]of Object.entries(BANK_DB)){const kws=[...s.senderIds,...s.keywords];if(kws.some(w=>lower.includes(w.toLowerCase()))){bankKey=k;bankSig=s;break;}}}
+  else bankSig=BANK_DB[bankKey];
+
+  // 1. Length
+  if(raw.length<50){risk+=30;issues.push("Message too short — real bank alerts are at least 100 characters");checks.push({pass:false,label:"Message length check",detail:"Real alerts include full transaction details"});}
+  else checks.push({pass:true,label:"Message length check"});
+
+  // 2. Kobo decimal
+  if(!/[\d,]+\.\d{2}/.test(raw)){risk+=28;issues.push("Amount has no kobo/decimal (e.g. .00) — real alerts ALWAYS show kobo e.g. ₦50,000.00");checks.push({pass:false,label:"Kobo decimal in amount",detail:"e.g. ₦50,000.00 — .00 must be present"});}
+  else{positives.push("Amount includes kobo decimal ✓");checks.push({pass:true,label:"Kobo decimal in amount"});}
+
+  // 3. Reference number
+  const hasRef=/ref[:\s#\-]?\s*[a-z0-9]{6,}/i.test(raw)||/tran[#:\s]*[a-z0-9]{6,}/i.test(raw)||/\b[A-Z]{2,5}\d{8,}\b/.test(raw)||/\b\d{10,16}\b/.test(raw)||/transaction\s*id[:\s]*[a-z0-9]{6,}/i.test(raw);
+  if(!hasRef){risk+=22;issues.push("No transaction reference/ID found — all real alerts contain a unique ref number");checks.push({pass:false,label:"Transaction reference",detail:"e.g. Ref: GTB2406121234567"});}
+  else{positives.push("Transaction reference present ✓");checks.push({pass:true,label:"Transaction reference"});}
+
+  // 4. Date
+  const hasDate=/\d{1,2}[\-\/]\d{1,2}[\-\/]\d{2,4}/.test(raw)||/\d{1,2}\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i.test(raw)||/\d{4}[\-\/]\d{2}[\-\/]\d{2}/.test(raw);
+  if(!hasDate){risk+=15;issues.push("No date found — real bank alerts always include the transaction date");checks.push({pass:false,label:"Transaction date"});}
+  else checks.push({pass:true,label:"Transaction date present"});
+
+  // 5. Time
+  const hasTime=/\d{1,2}:\d{2}(:\d{2})?\s*(am|pm)?/i.test(raw);
+  if(!hasTime){risk+=10;issues.push("No time found — real alerts include exact time of transaction");checks.push({pass:false,label:"Transaction time"});}
+  else checks.push({pass:true,label:"Transaction time present"});
+
+  // 6. Account masking
+  const hasMask=/\*{2,}\d{3,4}/.test(raw)||/\d{2,4}\*{4,}\d{3,4}/.test(raw)||/x{2,}\d{3,4}/i.test(raw)||/acct[#:\s]*[*xX\d]{6,}/i.test(raw);
+  if(!hasMask){risk+=18;issues.push("No masked account number — real alerts always partially hide account numbers e.g. XXXX1234 or **1234");checks.push({pass:false,label:"Account masking",detail:"Banks always hide middle digits"});}
+  else{positives.push("Account number properly masked ✓");checks.push({pass:true,label:"Account masking"});}
+
+  // 7. Credit keyword
+  const hasCr=/\b(credit|cr\b|credited|received|incoming|you have received|payment received|inflow|amount received)\b/i.test(raw);
+  if(!hasCr){risk+=22;issues.push("No credit keyword found (credit, received, incoming) — all legitimate credit alerts contain this");checks.push({pass:false,label:"Credit keyword",detail:"e.g. 'Credit Alert', 'You received', 'Cr:'"});}
+  else{positives.push("Credit keyword present ✓");checks.push({pass:true,label:"Credit keyword"});}
+
+  // 8. Balance
+  const hasBal=/bal[:\s]*[₦NGNn\d]/i.test(raw)||/balance[:\s]*[₦NGNn\d]/i.test(raw)||/avail[able]*[:\s]*[₦NGNn\d]/i.test(raw)||/new\s*bal/i.test(raw);
+  if(!hasBal){risk+=14;issues.push("No balance shown — most real alerts include your new balance after the transaction");checks.push({pass:false,label:"Balance after transaction"});}
+  else checks.push({pass:true,label:"Balance after transaction"});
+
+  // 9. Sender name
+  const hasSender=/from[:\s]+[A-Z][A-Za-z\s]{2,}/i.test(raw)||/sender[:\s]+[A-Z][A-Za-z\s]{2,}/i.test(raw)||/desc[:\s]+[A-Z][A-Za-z\s\-\/]{2,}/i.test(raw)||/narration[:\s]+/i.test(raw);
+  if(!hasSender){risk+=10;issues.push("No sender name found — real alerts show who sent the money");checks.push({pass:false,label:"Sender name"});}
+  else checks.push({pass:true,label:"Sender name present"});
+
+  // 10. Amount present
+  const amts=[];const amtRx=/(?:₦|NGN|N)\s*([\d,]+(?:\.\d{2})?)/gi;let m;
+  while((m=amtRx.exec(raw))!==null)amts.push(parseFloat(m[1].replace(/,/g,'')));
+  if(amts.length===0){risk+=22;issues.push("No monetary amount found");checks.push({pass:false,label:"Amount in message"});}
+  else checks.push({pass:true,label:"Amount present"});
+
+  // 11. Amount reasonability
+  if(amts.length>0&&amts[0]<100){risk+=15;issues.push("Amount is suspiciously small (below ₦100) — could be a test fake alert");checks.push({pass:false,label:"Amount reasonability"});}
+  else if(amts.length>0)checks.push({pass:true,label:"Amount reasonability"});
+
+  // 12. Spelling errors
+  const spellingBad=[{p:/\bcrdit\b/i,l:"'crdit' (should be 'credit')"},{p:/\balrt\b/i,l:"'alrt' (should be 'alert')"},{p:/\baccnt\b/i,l:"'accnt' (should be 'account')"},{p:/\brecievd\b/i,l:"'recievd' (spelling error)"},{p:/\breciept\b/i,l:"'reciept' (should be 'receipt')"},{p:/\btranfered\b/i,l:"'tranfered' (should be 'transferred')"},{p:/\bSuccessful!\s*!\s*!/i,l:"Excessive exclamation marks"},{p:/debit\s+alert\s+successful/i,l:"'Debit Alert Successful' — wrong phrase for a credit"},{p:/amout\b/i,l:"'amout' spelling error"},{p:/\bbalence\b/i,l:"'balence' (should be 'balance')"}];
+  const foundSpelling=spellingBad.filter(e=>e.p.test(raw));
+  if(foundSpelling.length>0){risk+=foundSpelling.length*12;issues.push("Spelling/grammar errors: "+foundSpelling.map(e=>e.l).join('; '));checks.push({pass:false,label:"Spelling & grammar",detail:foundSpelling.map(e=>e.l).join(', ')});}
+  else checks.push({pass:true,label:"Spelling & grammar"});
+
+  // 13. Known fraud app signatures
+  const fraudSigs=[{p:/probank/i,l:"Contains 'ProBank' — known fake alert generator app"},{p:/flash\s*fund/i,l:"Contains 'Flash Fund' — known fake alert generator"},{p:/demo\s*alert/i,l:"Contains 'Demo Alert'"},{p:/test\s*alert/i,l:"Contains 'Test Alert'"},{p:/alert\s*gen/i,l:"Contains 'Alert Generator'"},{p:/powered\s*by\s*probank/i,l:"'Powered by ProBank'"},{p:/transaction\s*pending/i,l:"'Transaction Pending' — money not confirmed yet"},{p:/will\s*be\s*credited/i,l:"'Will be credited' — future tense means money hasn't arrived"},{p:/network\s*(issue|problem|delay)/i,l:"Mentions network delay — classic stall tactic"},{p:/your\s*account\s*will/i,l:"'Your account will...' — future tense is suspicious"},{p:/pending\s*clearance/i,l:"'Pending clearance' — money not actually received"}];
+  const foundFraud=fraudSigs.filter(s=>s.p.test(raw));
+  if(foundFraud.length>0){risk+=foundFraud.length*40;foundFraud.forEach(s=>issues.push("🚨 CRITICAL: "+s.l));checks.push({pass:false,label:"Fraud app signatures",detail:foundFraud.map(s=>s.l).join('; ')});}
+  else checks.push({pass:true,label:"No fraud app signatures"});
+
+  // 14. Bank-specific checks
+  if(bankSig){
+    const kwOk=bankSig.keywords.some(w=>lower.includes(w.toLowerCase()));
+    if(!kwOk){risk+=20;issues.push("No "+bankSig.name+" identifier — real "+bankSig.name+" alerts mention the bank by name");checks.push({pass:false,label:bankSig.name+" bank ID"});}
+    else checks.push({pass:true,label:bankSig.name+" bank ID"});
+    if(bankSig.refPattern&&!bankSig.refPattern.test(raw)){risk+=10;issues.push("Reference number doesn't match "+bankSig.name+"'s expected format");checks.push({pass:false,label:bankSig.name+" ref format"});}
+    else if(bankSig.refPattern)checks.push({pass:true,label:bankSig.name+" ref format"});
+    if(bankSig.amountFmt&&!bankSig.amountFmt.test(raw)){risk+=8;issues.push("Amount format doesn't match "+bankSig.name+"'s standard format");checks.push({pass:false,label:bankSig.name+" amount format"});}
+    else if(bankSig.amountFmt)checks.push({pass:true,label:bankSig.name+" amount format"});
+  }
+
+  // 15. Urgency pressure tactics
+  if(/(hurry|urgent|quickly|immediately|now now|fast fast|don.t delay|no time)/i.test(raw)){risk+=15;issues.push("Contains urgency language — real bank alerts never pressure you to hurry");checks.push({pass:false,label:"Urgency language detected"});}
+  else checks.push({pass:true,label:"No suspicious urgency language"});
+
+  // 16. Consistency — round number without kobo (red flag)
+  if(/₦[\d,]+(?!\.)\b|NGN[\d,]+(?!\.)\b/i.test(raw)&&!/[\d,]+\.\d{2}/.test(raw)){risk+=18;issues.push("Amount shown as round number with no .00 — real alerts always show kobo");checks.push({pass:false,label:"Round amount without kobo"});}
+
+  // VERDICT
+  const maxRisk=280;
+  const pct=Math.min(100,Math.round((risk/maxRisk)*100));
+  let verdict,verdictLabel,verdictBg,verdictEmoji,riskLabel;
+  if(risk===0){verdict='SAFE';verdictLabel='LOOKS GENUINE';verdictBg='linear-gradient(135deg,#00C851,#00A040)';verdictEmoji='✅';riskLabel='Zero Risk';}
+  else if(risk<=25){verdict='LIKELY_SAFE';verdictLabel='MOSTLY GENUINE';verdictBg='linear-gradient(135deg,#00C851,#00A040)';verdictEmoji='✅';riskLabel='Very Low Risk';}
+  else if(risk<=60){verdict='SUSPICIOUS';verdictLabel='SUSPICIOUS — VERIFY FIRST';verdictBg='linear-gradient(135deg,#FFB300,#FF8C00)';verdictEmoji='⚠️';riskLabel='Medium Risk';}
+  else if(risk<=100){verdict='LIKELY_FAKE';verdictLabel='LIKELY FAKE';verdictBg='linear-gradient(135deg,#FF3B30,#CC1A1A)';verdictEmoji='❌';riskLabel='High Risk';}
+  else{verdict='FAKE';verdictLabel='WURUWURU DETECTED';verdictBg='linear-gradient(135deg,#FF3B30,#8B0000)';verdictEmoji='🚨';riskLabel='CRITICAL — FAKE';}
+  return{verdict,verdictLabel,verdictBg,verdictEmoji,riskLabel,risk,pct,issues,positives,checks,bankName:bankSig?bankSig.name:'Unknown/Auto',amts};
+}
+
+// ============================================================
+// RECEIPT IMAGE ANALYSIS (Unlimited Plan)
+// ============================================================
+let receiptFile=null;
+function switchAlertTab(tab){
+  document.getElementById('alertTextTab').classList.toggle('hidden',tab!=='text');
+  document.getElementById('alertImgTab').classList.toggle('hidden',tab!=='img');
+  document.getElementById('tabTextBtn').classList.toggle('active',tab==='text');
+  document.getElementById('tabImgBtn').classList.toggle('active',tab==='img');
+  document.getElementById('alertResult').classList.add('hidden');
+  document.getElementById('alertResult').innerHTML='';
+  if(tab==='img'&&!isPremium()){showUpgrade();}
+}
+function handleReceiptUpload(e){
+  if(!isPremium()){showUpgrade();e.target.value='';return;}
+  const file=e.target.files[0];
+  if(!file)return;
+  if(file.size>10*1024*1024){toast('File too large. Max 10MB.');return;}
+  receiptFile=file;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    document.getElementById('receiptPreview').src=ev.target.result;
+    document.getElementById('receiptPreviewWrap').classList.remove('hidden');
+    toast('Image loaded. Click Analyze to check.');
+  };
+  reader.readAsDataURL(file);
+}
+function analyzeReceipt(){
+  if(!receiptFile){toast('Please upload a receipt image first');return;}
+  if(!isPremium()){showUpgrade();return;}
+  if(!canCheck()){showUpgrade();return;}
+  const btn=document.getElementById('analyzeReceiptBtn');
+  btn.innerHTML='<span class="spinner"></span> Analyzing image...';
+  btn.disabled=true;
+  // Use canvas to extract image data for analysis (heuristic-based since no OCR API)
+  const img=document.getElementById('receiptPreview');
+  const canvas=document.createElement('canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=img.naturalWidth||img.width;
+  canvas.height=img.naturalHeight||img.height;
+  ctx.drawImage(img,0,0);
+  // Analyse image dimensions, colors, and metadata
+  const imageData=ctx.getImageData(0,0,canvas.width,canvas.height);
+  const receiptAnalysis=analyzeReceiptImage(canvas,imageData,img.src);
+  setTimeout(()=>{
+    useCheck();
+    ST.totalScans++;
+    if(receiptAnalysis.verdict==='FAKE'||receiptAnalysis.verdict==='LIKELY_FAKE')ST.totalFake++;
+    else if(receiptAnalysis.verdict==='SAFE'||receiptAnalysis.verdict==='LIKELY_SAFE')ST.totalSafe++;
+    saveState();updateStats();
+    ST.history.unshift({type:'receipt',time:new Date().toLocaleString('en-NG'),verdict:receiptAnalysis.verdict,verdictLabel:receiptAnalysis.verdictLabel,preview:'Receipt image analysis'});
+    saveState();
+    renderReceiptResult(receiptAnalysis);
+    btn.innerHTML='🔍 Analyze Receipt Image';
+    btn.disabled=false;
+  },2000);
+}
+function analyzeReceiptImage(canvas,imageData,src){
+  const w=canvas.width,h=canvas.height;
+  const checks=[],issues=[];let risk=0;
+  // 1. Image dimensions — receipts are typically tall (portrait)
+  const ratio=h/w;
+  if(ratio<0.5){risk+=25;issues.push("Image is landscape-oriented — bank receipts are typically portrait (tall)");checks.push({pass:false,label:"Portrait orientation",detail:"Real receipts are taller than wide"});}
+  else checks.push({pass:true,label:"Portrait orientation"});
+  // 2. Minimum resolution
+  if(w<200||h<200){risk+=30;issues.push("Image resolution too low — may be a screenshot of a manipulated image");checks.push({pass:false,label:"Minimum resolution"});}
+  else checks.push({pass:true,label:"Minimum resolution"});
+  // 3. Check if image is mostly white (real receipts/screenshots have white background)
+  let whitePixels=0;const total=w*h;
+  for(let i=0;i<imageData.data.length;i+=4){const r=imageData.data[i],g=imageData.data[i+1],b=imageData.data[i+2];if(r>200&&g>200&&b>200)whitePixels++;}
+  const whitePct=whitePixels/total;
+  if(whitePct<0.3){risk+=20;issues.push("Image has very little white area — real bank receipts/screenshots have predominantly white backgrounds");checks.push({pass:false,label:"Background colour check",detail:"Real receipts are mostly white"});}
+  else checks.push({pass:true,label:"Background colour check"});
+  // 4. Check for Nigerian bank colors (green, red, blue, orange dominant areas)
+  let greenPx=0,redPx=0,bluePx=0;
+  for(let i=0;i<imageData.data.length;i+=4){
+    const r=imageData.data[i],g=imageData.data[i+1],b=imageData.data[i+2];
+    if(g>150&&g>r*1.3&&g>b*1.3)greenPx++;
+    if(r>150&&r>g*1.3&&r>b*1.3)redPx++;
+    if(b>150&&b>r*1.3&&b>g*1.3)bluePx++;
+  }
+  const colourPct=(greenPx+redPx+bluePx)/total;
+  if(colourPct<0.005){risk+=15;issues.push("No bank brand colours detected — authentic receipts always have the bank's brand colour (logo/header)");checks.push({pass:false,label:"Bank brand colour check"});}
+  else checks.push({pass:true,label:"Bank brand colour detected"});
+  // 5. Aspect ratio — 3:4 or 9:16 or full-page receipt
+  if(w>h*1.5){risk+=20;issues.push("Unusual landscape aspect ratio for a bank receipt — could be an edited screenshot");checks.push({pass:false,label:"Aspect ratio check"});}
+  else checks.push({pass:true,label:"Aspect ratio check"});
+  // 6. Image appears to be a genuine screenshot (check for very uniform color bands = overlay fake)
+  let rowSimilar=0;
+  for(let y=0;y<Math.min(h,50);y++){const idx=y*w*4;const r=imageData.data[idx],g=imageData.data[idx+1],b=imageData.data[idx+2];if(Math.abs(r-imageData.data[(y+1)*w*4])<5&&Math.abs(g-imageData.data[(y+1)*w*4+1])<5)rowSimilar++;}
+  if(rowSimilar>40){risk+=15;issues.push("Solid colour block detected at top — could indicate a text overlay was placed on a fake background");checks.push({pass:false,label:"Header colour block analysis"});}
+  else checks.push({pass:true,label:"Header area looks authentic"});
+  // Verdict
+  const pct=Math.min(100,Math.round((risk/130)*100));
+  let verdict,verdictLabel,verdictBg,verdictEmoji;
+  if(risk===0){verdict='SAFE';verdictLabel='RECEIPT APPEARS AUTHENTIC';verdictBg='linear-gradient(135deg,#00C851,#00A040)';verdictEmoji='✅';}
+  else if(risk<=25){verdict='LIKELY_SAFE';verdictLabel='LIKELY AUTHENTIC';verdictBg='linear-gradient(135deg,#00C851,#00A040)';verdictEmoji='✅';}
+  else if(risk<=55){verdict='SUSPICIOUS';verdictLabel='SUSPICIOUS — VERIFY MANUALLY';verdictBg='linear-gradient(135deg,#FFB300,#FF8C00)';verdictEmoji='⚠️';}
+  else if(risk<=90){verdict='LIKELY_FAKE';verdictLabel='LIKELY MANIPULATED RECEIPT';verdictBg='linear-gradient(135deg,#FF3B30,#CC1A1A)';verdictEmoji='❌';}
+  else{verdict='FAKE';verdictLabel='RECEIPT MANIPULATION DETECTED';verdictBg='linear-gradient(135deg,#FF3B30,#8B0000)';verdictEmoji='🚨';}
+  return{verdict,verdictLabel,verdictBg,verdictEmoji,risk,pct,issues,checks,imageInfo:`${w}×${h}px • ${(receiptFile.size/1024).toFixed(1)}KB • ${receiptFile.type}`};
+}
+function renderReceiptResult(r){
+  const el=document.getElementById('alertResult');
+  el.classList.remove('hidden');
+  el.innerHTML=`
+  <div class="result-card mb-2 fade-in" style="background:${r.verdictBg}">
+    <div class="flex f-between f-align mb-2">
+      <div><div class="t-2xl w-800 c-white">${r.verdictEmoji} ${r.verdictLabel}</div><div class="t-xs c-white" style="opacity:0.85">${r.imageInfo}</div></div>
+      <div class="score-circle"><div class="t-lg w-800 c-white">${r.pct}%</div><div class="t-xs c-white" style="opacity:0.8">risk</div></div>
+    </div>
+  </div>
+  ${r.issues.length>0?`<div class="card mb-2" style="border:2px solid var(--danger)"><div class="t-sm w-700 c-danger mb-2">❌ Issues Found (${r.issues.length})</div>${r.issues.map(i=>`<div class="t-sm mb-1" style="padding:6px 0;border-bottom:1px solid var(--gray-100)">• ${i}</div>`).join('')}</div>`:''}
+  <div class="card mb-2"><div class="t-sm w-700 mb-2">🔍 Image Analysis Checkpoints</div>
+  ${r.checks.map(c=>`<div class="indicator-row"><div class="indicator-dot" style="background:${c.pass?'var(--success)':'var(--danger)'}"></div><div style="flex:1"><div class="t-sm w-500">${c.label}</div>${c.detail?`<div class="t-xs c-gray">${c.detail}</div>`:''}</div><div>${c.pass?'✅':'❌'}</div></div>`).join('')}
+  </div>
+  <div class="card mb-2" style="background:var(--warning-l)"><div class="t-sm w-600 mb-1">⚠️ Important Note</div><div class="t-sm c-gray">Receipt image analysis checks visual patterns and properties. Always confirm any payment by checking your actual bank balance via your banking app or USSD code before releasing goods or cash.</div></div>
+  <button class="btn btn-secondary w-full" onclick="document.getElementById('receiptInput').value='';document.getElementById('receiptPreviewWrap').classList.add('hidden');document.getElementById('alertResult').classList.add('hidden')">Check Another Receipt</button>`;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ============================================================
+// ALERT UI
+// ============================================================
+function analyzeAlert(){
+  const text=document.getElementById('alertText').value.trim();
+  const bank=document.getElementById('bankSelect').value;
+  if(!text){toast('Please paste the alert message first');return;}
+  if(text.length<20){toast('Too short — paste the full SMS');return;}
+  if(!canCheck()){showUpgrade();return;}
+  const btn=document.getElementById('analyzeBtn');
+  btn.innerHTML='<span class="spinner"></span> Analyzing...';btn.disabled=true;
+  setTimeout(()=>{
+    const r=analyzeAlertText(text,bank);
+    useCheck();
+    ST.totalScans++;
+    if(r.verdict==='FAKE'||r.verdict==='LIKELY_FAKE')ST.totalFake++;
+    else if(r.verdict==='SAFE'||r.verdict==='LIKELY_SAFE')ST.totalSafe++;
+    saveState();updateStats();
+    ST.history.unshift({type:'alert',time:new Date().toLocaleString('en-NG'),bank:r.bankName,verdict:r.verdict,verdictLabel:r.verdictLabel,preview:text.substring(0,80)+'...'});
+    saveState();
+    renderAlertResult(r);
+    btn.innerHTML='🔍 Analyze Alert Now';btn.disabled=false;
+  },1200);
+}
+function renderAlertResult(r){
+  const el=document.getElementById('alertResult');
+  el.classList.remove('hidden');
+  const isFake=r.verdict==='FAKE'||r.verdict==='LIKELY_FAKE';
+  const isSusp=r.verdict==='SUSPICIOUS';
+  el.innerHTML=`
+  <div class="result-card mb-2 fade-in" style="background:${r.verdictBg}">
+    <div class="flex f-between f-align mb-2">
+      <div><div class="t-2xl w-800 c-white">${r.verdictEmoji} ${r.verdictLabel}</div><div class="t-sm c-white" style="opacity:0.85">Bank: ${r.bankName} • ${r.riskLabel}</div></div>
+      <div class="score-circle"><div class="t-lg w-800 c-white">${r.pct}%</div><div class="t-xs c-white" style="opacity:0.8">risk</div></div>
+    </div>
+    <div class="t-xs c-white" style="opacity:0.7">${r.checks.length} checkpoints analyzed</div>
+  </div>
+  ${r.issues.length>0?`<div class="card mb-2" style="border:2px solid var(--danger)"><div class="t-sm w-700 c-danger mb-2">🚨 Problems Found (${r.issues.length})</div>${r.issues.map(i=>`<div class="t-sm mb-1" style="padding:6px 0;border-bottom:1px solid var(--gray-100)">• ${i}</div>`).join('')}</div>`:''}
+  <div class="card mb-2"><div class="t-sm w-700 mb-2">🔍 Security Checkpoints</div>
+  ${r.checks.map(c=>`<div class="indicator-row"><div class="indicator-dot" style="background:${c.pass?'var(--success)':'var(--danger)'}"></div><div style="flex:1"><div class="t-sm w-500">${c.label}</div>${c.detail?`<div class="t-xs c-gray">${c.detail}</div>`:''}</div><div>${c.pass?'✅':'❌'}</div></div>`).join('')}
+  </div>
+  <div class="card mb-2" style="background:${isFake?'var(--danger-l)':isSusp?'var(--warning-l)':'var(--success-l)'}">
+    <div class="w-600 mb-1">${isFake?'⚠️ DO NOT Release Goods':isSusp?'⚠️ Verify Before Proceeding':'✅ Recommendation'}</div>
+    <div class="t-sm">${isFake?'This alert shows multiple signs of being FAKE. Do NOT release goods or cash. Check your actual bank balance directly via your banking app or USSD code.':isSusp?'This alert has suspicious elements. PAUSE and verify your actual bank balance directly before proceeding. Do not rely on this SMS alone.':'This alert looks genuine. For absolute safety, always confirm by checking your bank balance via app or USSD before releasing goods.'}</div>
+  </div>
+  <div class="card mb-2" style="background:var(--gray-100)"><div class="t-sm w-600 mb-1 c-gray">🏦 Quick Balance Check USSD</div><div class="t-sm c-gray">GTB *737# • Access *901# • UBA *919# • First *894# • Zenith *966# • OPay *955# • PalmPay *951# • Kuda *7080# • Moniepoint *5573#</div></div>
+  <button class="btn btn-secondary w-full mb-1" onclick="clearAlert()">Check Another Alert</button>`;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function clearAlert(){
+  document.getElementById('alertText').value='';
+  document.getElementById('alertCharCount').textContent='0 characters';
+  document.getElementById('alertResult').classList.add('hidden');
+  document.getElementById('alertResult').innerHTML='';
+  document.getElementById('bankSelect').value='';
+}
+async function pasteClip(){try{const t=await navigator.clipboard.readText();document.getElementById('alertText').value=t;updateCharCount();toast('Pasted!');}catch(e){toast('Tap & hold the text area to paste manually');}}
+function updateCharCount(){document.getElementById('alertCharCount').textContent=document.getElementById('alertText').value.length+' characters';}
+document.getElementById('alertText').addEventListener('input',updateCharCount);
+
+// ============================================================
+// ODDS ENGINE — ENHANCED
+// ============================================================
+document.querySelectorAll('.bookie-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.bookie-btn').forEach(b=>b.className='badge badge-gray bookie-btn');
+    this.className='badge badge-primary bookie-btn';
+    ST.activeBookie=this.dataset.bookie;
+  });
+});
+function addOddRow(){
+  const c=document.getElementById('manualOddsContainer');
+  const r=document.createElement('div');r.className='flex mb-1';r.style.gap='6px';
+  r.innerHTML=`<input type="text" class="input" style="flex:2;height:44px;font-size:13px" placeholder="e.g. Arsenal vs Chelsea"><input type="text" class="input" style="flex:1;height:44px;font-size:13px" placeholder="Pick (1/X/2)"><input type="number" class="input" style="width:72px;height:44px;font-size:13px" placeholder="Odd" step="0.01" min="1"><button onclick="removeOddRow(this)" style="padding:0 6px;color:var(--danger);font-size:18px">✕</button>`;
+  c.appendChild(r);updateTotalOdds();
+}
+function removeOddRow(btn){const rows=document.querySelectorAll('#manualOddsContainer .flex');if(rows.length<=1){toast('Need at least one game');return;}btn.parentElement.remove();updateTotalOdds();}
+function updateTotalOdds(){
+  const rows=document.querySelectorAll('#manualOddsContainer .flex');
+  let total=1;let count=0;
+  rows.forEach(r=>{const inputs=r.querySelectorAll('input');const v=parseFloat(inputs[2]?.value);if(!isNaN(v)&&v>1){total*=v;count++;}});
+  document.getElementById('totalOddsDisplay').textContent=count>0?total.toFixed(2)+'x':'—';
+}
+document.getElementById('manualOddsContainer').addEventListener('input',updateTotalOdds);
+function getManualOdds(){
+  const rows=document.querySelectorAll('#manualOddsContainer .flex');const odds=[];
+  rows.forEach(r=>{const inputs=r.querySelectorAll('input');const game=inputs[0].value.trim();const pick=inputs[1].value.trim();const odd=parseFloat(inputs[2].value);if(game&&!isNaN(odd)&&odd>1)odds.push({game,pick,odd});});
+  return odds;
+}
+function saveOdds(){
+  const code=document.getElementById('bookingCode').value.trim().toUpperCase();
+  if(!code){toast('Enter your booking code first');return;}
+  const manualOdds=getManualOdds();
+  if(manualOdds.length===0){toast('Enter at least one game\'s odds');return;}
+  const matchDate=document.getElementById('matchDate').value;
+  const matchTime=document.getElementById('matchTime').value;
+  const entry={id:Date.now(),code,bookie:ST.activeBookie,odds:manualOdds,savedAt:new Date().toLocaleString('en-NG'),matchDate,matchTime,totalOdds:manualOdds.reduce((a,b)=>a*b.odd,1).toFixed(2),status:'saved'};
+  ST.savedCodes.unshift(entry);
+  if(ST.savedCodes.length>100)ST.savedCodes=ST.savedCodes.slice(0,100);
+  saveState();renderSavedCodes();
+  toast('✅ Odds saved! Check after match to detect wuruwuru.',4000);
+}
+function renderSavedCodes(){
+  const el=document.getElementById('savedCodesList');if(!el)return;
+  if(ST.savedCodes.length===0){el.innerHTML='<div class="t-sm c-gray t-center" style="padding:20px 0">No saved codes yet.</div>';return;}
+  el.innerHTML=ST.savedCodes.map((c,i)=>`
+  <div class="card mb-1 fade-in">
+    <div class="flex f-between f-align mb-1">
+      <div><div class="t-sm w-700">${c.bookie?.toUpperCase()}: ${c.code}</div><div class="t-xs c-gray">${c.savedAt}${c.matchDate?' | Match: '+c.matchDate+(c.matchTime?' '+c.matchTime:''):''}</div></div>
+      <div class="flex" style="gap:6px">
+        <button class="badge badge-primary" style="cursor:pointer" onclick="loadCodeCheck(${i})">Check</button>
+        <button class="badge badge-danger" style="cursor:pointer" onclick="deleteCode(${i})">Del</button>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--gray-600)">
+      ${c.odds.map(o=>`${o.game}${o.pick?' ('+o.pick+')':''}: <strong>${o.odd}</strong>`).join(' · ')}
+    </div>
+    <div class="t-xs c-gray mt-1">Total odds: <strong>${c.totalOdds}x</strong></div>
+    ${c.result?`<div class="badge badge-${c.result.safe?'success':'danger'} mt-1">${c.result.label}</div>`:''}
+  </div>`).join('');
+}
+function loadCodeCheck(idx){
+  const c=ST.savedCodes[idx];
+  document.getElementById('bookingCode').value=c.code;
+  document.querySelectorAll('.bookie-btn').forEach(b=>{b.className=`badge badge-${b.dataset.bookie===c.bookie?'primary':'gray'} bookie-btn`;});
+  ST.activeBookie=c.bookie;
+  // Pre-fill odds fields for comparison
+  const container=document.getElementById('manualOddsContainer');
+  container.innerHTML='';
+  c.odds.forEach((o,i)=>{
+    const r=document.createElement('div');r.className='flex mb-1';r.style.gap='6px';
+    r.innerHTML=`<input type="text" class="input" style="flex:2;height:44px;font-size:13px" value="${o.game}" placeholder="Team A vs Team B"><input type="text" class="input" style="flex:1;height:44px;font-size:13px" value="${o.pick||''}" placeholder="Pick"><input type="number" class="input" style="width:72px;height:44px;font-size:13px" placeholder="NEW Odd" step="0.01" min="1"><button onclick="removeOddRow(this)" style="padding:0 6px;color:var(--danger);font-size:18px">✕</button>`;
+    container.appendChild(r);
+  });
+  toast('Loaded '+c.code+' — clear the odds fields and enter CURRENT odds to compare',5000);
+}
+function deleteCode(idx){ST.savedCodes.splice(idx,1);saveState();renderSavedCodes();toast('Deleted');}
+function checkOddsChange(){
+  const code=document.getElementById('bookingCode').value.trim().toUpperCase();
+  if(!code){toast('Enter the booking code to check');return;}
+  const currentOdds=getManualOdds();
+  if(currentOdds.length===0){toast('Enter the CURRENT odds for comparison');return;}
+  if(!canCheck()){showUpgrade();return;}
+  const saved=ST.savedCodes.find(c=>c.code===code&&c.bookie===ST.activeBookie);
+  const resultEl=document.getElementById('oddsResult');
+  resultEl.classList.remove('hidden');
+  if(!saved){
+    resultEl.innerHTML=`<div class="card" style="border:2px solid var(--warning)"><div class="t-base w-700 c-warning mb-1">⚠️ No Saved Baseline for This Code</div><div class="t-sm c-gray">You didn't save this code before the match. Without a saved baseline, we can't prove odds were changed. In future, save the code BEFORE kick-off. Current odds you entered: ${currentOdds.map(o=>o.game+': '+o.odd).join(', ')}</div></div>`;
+    return;
+  }
+  useCheck();
+  const changes=[],matches=[],missing=[];let anyChange=false;
+  saved.odds.forEach(sav=>{
+    const curr=currentOdds.find(c=>c.game.toLowerCase()===sav.game.toLowerCase()||c.game.toLowerCase().includes(sav.game.toLowerCase().split(' ')[0])||sav.game.toLowerCase().includes(c.game.toLowerCase().split(' ')[0]));
+    if(curr){
+      const diff=parseFloat((curr.odd-sav.odd).toFixed(4));
+      const pctChange=((Math.abs(diff)/sav.odd)*100).toFixed(1);
+      if(Math.abs(diff)>0.01){anyChange=true;const dir=diff<0?'↘️ REDUCED (agent may have cut odds)':'↗️ INCREASED';changes.push({game:sav.game,pick:sav.pick,savedOdd:sav.odd,currentOdd:curr.odd,diff:diff.toFixed(2),pctChange,dir});}
+      else matches.push({game:sav.game,pick:sav.pick,odd:sav.odd});
+    }else missing.push(sav.game);
+  });
+  const verdict=anyChange?'WURUWURU DETECTED ❌':'ODDS CLEAN ✅';
+  const bg=anyChange?'linear-gradient(135deg,#FF3B30,#8B0000)':'linear-gradient(135deg,#00C851,#00A040)';
+  const savedIdx=ST.savedCodes.findIndex(c=>c.code===code);
+  if(savedIdx!==-1){ST.savedCodes[savedIdx].result={safe:!anyChange,label:anyChange?'Odds Changed ❌':'Odds OK ✅'};saveState();}
+  ST.totalScans++;
+  ST.history.unshift({type:'odds',time:new Date().toLocaleString('en-NG'),bookie:ST.activeBookie,code,verdict:anyChange?'WURUWURU':'SAFE',verdictLabel:anyChange?'Odds Changed ❌':'Odds Clean ✅',changes:changes.length});
+  saveState();updateStats();
+  resultEl.innerHTML=`
+  <div class="result-card mb-2 fade-in" style="background:${bg}">
+    <div class="t-2xl w-800 c-white mb-1">${anyChange?'🚨':'✅'} ${verdict}</div>
+    <div class="t-sm c-white" style="opacity:0.85">Code: ${code} · ${ST.activeBookie?.toUpperCase()}</div>
+    <div class="t-xs c-white mt-1" style="opacity:0.7">Saved: ${saved.savedAt} · Total saved odds: ${saved.totalOdds}x</div>
+  </div>
+  ${changes.length>0?`<div class="card mb-2" style="border:2px solid var(--danger)"><div class="t-sm w-700 c-danger mb-2">❌ Manipulated Games (${changes.length})</div>${changes.map(c=>`<div class="odds-row odds-changed"><div style="flex:1"><div class="t-sm w-600">${c.game}${c.pick?' ('+c.pick+')':''}</div><div class="t-xs c-danger">${c.dir}: ${c.savedOdd} → ${c.currentOdd} | Diff: ${c.diff>0?'+':''}${c.diff} (${c.pctChange}% change)</div></div></div>`).join('')}</div>`:''}
+  ${matches.length>0?`<div class="card mb-2"><div class="t-sm w-600 c-success mb-2">✅ Unchanged Odds (${matches.length})</div>${matches.map(m=>`<div class="odds-row odds-same"><div class="t-sm">${m.game}${m.pick?' ('+m.pick+')':''}: ${m.odd}</div></div>`).join('')}</div>`:''}
+  ${missing.length>0?`<div class="card mb-2" style="background:var(--warning-l)"><div class="t-sm w-600 c-warning mb-1">⚠️ Not Found in Current Entry</div>${missing.map(g=>`<div class="t-xs c-gray">• ${g}</div>`).join('')}</div>`:''}
+  <div class="card mb-2" style="background:${anyChange?'var(--danger-l)':'var(--success-l)'}">
+    <div class="t-sm w-600 mb-1">${anyChange?'⚠️ What to Do':'✅ You\'re Safe'}</div>
+    <div class="t-sm">${anyChange?'This is clear evidence of odds manipulation. Screenshot this result as proof. Report to the betting platform customer service. Do not accept settlement based on manipulated odds. You have the right to demand the original odds.':'No odds changes detected. The odds are consistent with what you saved before the match.'}</div>
+  </div>`;
+  resultEl.scrollIntoView({behavior:'smooth'});
+}
+function clearOdds(){
+  document.getElementById('bookingCode').value='';
+  document.getElementById('oddsResult').classList.add('hidden');
+  document.getElementById('oddsResult').innerHTML='';
+  document.getElementById('manualOddsContainer').innerHTML=`<div class="flex mb-1" style="gap:6px"><input type="text" class="input" style="flex:2;height:44px;font-size:13px" placeholder="e.g. Arsenal vs Chelsea"><input type="text" class="input" style="flex:1;height:44px;font-size:13px" placeholder="Pick (1/X/2)"><input type="number" class="input" style="width:72px;height:44px;font-size:13px" placeholder="Odd" step="0.01" min="1"><button onclick="removeOddRow(this)" style="padding:0 6px;color:var(--danger);font-size:18px">✕</button></div>`;
+  document.getElementById('totalOddsDisplay').textContent='—';
+}
+
+// ============================================================
+// UNLOCK CODE
+// ============================================================
+function verifyCode(){
+  const input=document.getElementById('unlockCodeInput').value.trim().toUpperCase();
+  const msgEl=document.getElementById('codeMsg');msgEl.classList.remove('hidden');
+  if(!input){msgEl.textContent='⚠️ Please enter your unlock code';msgEl.style.color='var(--warning)';return;}
+  if(!VALID_CODES.has(input)){msgEl.textContent='❌ Invalid code. Double-check and try again, or contact 08106610386 on WhatsApp.';msgEl.style.color='var(--danger)';return;}
+  if(usedCodes.has(input)){msgEl.textContent='⚠️ This code has already been used on this device.';msgEl.style.color='var(--warning)';return;}
+  usedCodes.add(input);
+  localStorage.setItem('wg_used_codes',JSON.stringify([...usedCodes]));
+  ST.plan='unlimited';
+  localStorage.setItem('wg_plan_'+(ST.user?.phone||''),'unlimited');
+  msgEl.textContent='✅ Unlocked! Welcome to WuruwuruGo Unlimited!';msgEl.style.color='var(--success)';
+  document.getElementById('planBadge').textContent='UNLIMITED ✓';
+  document.getElementById('planBadge').className='badge badge-success';
+  document.getElementById('freeNotice').classList.add('hidden');
+  document.getElementById('dailyLimitBar').classList.add('hidden');
+  setTimeout(()=>{closeModal('upgradeModal');toast('🎉 WuruwuruGo Unlimited activated! No more limits.',5000);},1500);
+}
+function isPremium(){return ST.plan==='unlimited';}
+
+// ============================================================
+// SHARE BUTTONS
+// ============================================================
+const SHARE_PLATFORMS=[
+  {name:'WhatsApp',color:'#25D366',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>',url:`https://wa.me/?text=${SHARE_MSG}`},
+  {name:'Facebook',color:'#1877F2',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',url:`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(APP_URL)}`},
+  {name:'Twitter',color:'#000000',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',url:`https://twitter.com/intent/tweet?text=${SHARE_MSG}`},
+  {name:'Telegram',color:'#2AABEE',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>',url:`https://t.me/share/url?url=${encodeURIComponent(APP_URL)}&text=${SHARE_MSG}`},
+  {name:'Messenger',color:'#006AFF',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.975 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>',url:`https://www.facebook.com/dialog/send?link=${encodeURIComponent(APP_URL)}&app_id=291494419107518`},
+  {name:'Reddit',color:'#FF4500',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>',url:`https://reddit.com/submit?url=${encodeURIComponent(APP_URL)}&title=${SHARE_TITLE}`},
+  {name:'Copy Link',color:'#636366',icon:'<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>',action:()=>{copyText(APP_URL,'Link copied! Share it with someone.');}}
+];
+function buildShareButtons(containerId){
+  const el=document.getElementById(containerId);if(!el)return;
+  el.innerHTML=SHARE_PLATFORMS.map((p,i)=>`
+  <button class="share-btn" style="background:${p.color}" onclick="shareOn(${i})" title="${p.name}">
+    ${p.icon}<span style="color:white;font-size:10px">${p.name}</span>
+  </button>`).join('');
+}
+function shareOn(idx){
+  const p=SHARE_PLATFORMS[idx];
+  if(p.action){p.action();return;}
+  // Native share first on mobile
+  if(navigator.share&&idx===0){navigator.share({title:'WuruwuruGo – Stop Fake Alerts',text:'🚨 Stop accepting fake transfers! I use WuruwuruGo to detect fake bank alerts & odds manipulation instantly. Try it FREE 👇 '+APP_URL,url:APP_URL}).catch(()=>{window.open(p.url,'_blank');});return;}
+  window.open(p.url,'_blank');
+}
+
+// ============================================================
+// USSD CODES
+// ============================================================
+function renderUssd(){
+  const el=document.getElementById('ussdList');if(!el)return;
+  el.innerHTML=USSD_CODES.map(u=>`
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--gray-100)">
+    <div>
+      <div class="t-sm w-600">${u.bank}</div>
+      <div class="t-xs c-gray">${u.service}</div>
+    </div>
+    <button class="badge badge-primary" style="cursor:pointer;font-family:monospace" onclick="copyText('${u.ussd}','${u.ussd} copied!')">${u.ussd}</button>
+  </div>`).join('');
+}
+
+// ============================================================
+// HISTORY
+// ============================================================
+function renderHistory(){
+  const el=document.getElementById('historyList');if(!el)return;
+  if(ST.history.length===0){el.innerHTML='<div class="t-sm c-gray t-center" style="padding:20px 0">No scan history yet</div>';return;}
+  el.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div class="t-sm w-600 c-gray">RECENT (${ST.history.length})</div><button class="t-xs c-danger w-600" onclick="clearHistory()">Clear All</button></div>`+
+  ST.history.slice(0,30).map(h=>`
+  <div class="card mb-1">
+    <div class="flex f-between f-align">
+      <div>
+        <div class="badge badge-${h.type==='alert'?'primary':h.type==='receipt'?'accent':'accent'} mb-1">${h.type==='alert'?'🏦 Alert':h.type==='receipt'?'🖼️ Receipt':'⚽ Odds'}</div>
+        <div class="t-sm w-600">${h.type==='alert'?h.bank:h.type==='receipt'?'Receipt Image':h.bookie?.toUpperCase()+': '+h.code}</div>
+        <div class="t-xs c-gray">${h.time}</div>
+      </div>
+      <div class="badge badge-${(h.verdict==='SAFE'||h.verdict==='LIKELY_SAFE')?'success':(h.verdict==='SUSPICIOUS'?'warning':'danger')}">${h.verdictLabel}</div>
+    </div>
+    ${h.preview?`<div class="t-xs c-gray mt-1" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${h.preview}</div>`:''}
+  </div>`).join('');
+}
+function clearHistory(){if(!confirm('Clear scan history?'))return;ST.history=[];saveState();renderHistory();toast('History cleared');}
+
+// ============================================================
+// STATS & UTILS
+// ============================================================
+function updateStats(){
+  document.getElementById('statScans').textContent=ST.totalScans;
+  document.getElementById('statFake').textContent=ST.totalFake;
+  document.getElementById('statSafe').textContent=ST.totalSafe;
+}
+function copyText(text,msg){
+  navigator.clipboard.writeText(text).then(()=>toast(msg||'Copied!')).catch(()=>{const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);toast(msg||'Copied!');});
+}
+function openWhatsApp(){window.open('https://wa.me/2348106610386?text=Hi%2C%20I%20just%20paid%20for%20WuruwuruGo%20upgrade.%20Please%20find%20my%20receipt%20attached.','_blank');}
+function toast(msg,dur=3000){const el=document.getElementById('toastEl');el.textContent=msg;el.classList.remove('hidden');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.add('hidden'),dur);}
+function showUpgrade(){document.getElementById('upgradeModal').classList.remove('hidden');document.getElementById('codeMsg').classList.add('hidden');}
+function closeModal(id){document.getElementById(id).classList.add('hidden');}
+
+// ============================================================
+// INIT
+// ============================================================
+window.addEventListener('DOMContentLoaded',()=>{
+  // Auto-login if user exists
+  const savedUser=localStorage.getItem('wg_current_user');
+  if(savedUser){
+    try{const u=JSON.parse(savedUser);launchApp(u);}
+    catch(e){localStorage.removeItem('wg_current_user');}
+  }
+  // Modal close on bg click
+  document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.add('hidden');}));
+  // Drag & drop for receipt
+  const dz=document.getElementById('receiptDropZone');
+  if(dz){dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('dragover');});dz.addEventListener('dragleave',()=>dz.classList.remove('dragover'));dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('dragover');const f=e.dataTransfer.files[0];if(f){document.getElementById('receiptInput').files=e.dataTransfer.files;handleReceiptUpload({target:{files:[f]}});}});}
+});
+</script>
+</body>
+</html>
