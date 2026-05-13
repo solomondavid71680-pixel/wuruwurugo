@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://solomondavid71680-pixel.github.io/wuruwurugo/sitemap.xml
